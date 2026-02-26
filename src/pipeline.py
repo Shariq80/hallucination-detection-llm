@@ -9,6 +9,8 @@ class HallucinationPipeline:
         self.aggregator = ScoreAggregator()
 
     def verify(self, claim, evidence):
+        print("NLIVerifier:")
+        nli_result = self.nli.verify(evidence, claim)
         sim_score = self.similarity.score(claim, evidence)
         nli_scores = self.nli.predict(claim, evidence)
 
