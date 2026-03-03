@@ -2,9 +2,10 @@ from sentence_transformers import SentenceTransformer, util
 import torch
 
 class SimilarityScorer:
-    def __init__(self, model_name="all-MiniLM-L6-v2"):
+    def __init__(self, model_name="all-MiniLM-L6-v2", threshold=0.60):
         """Initialize the semantic similarity scoring pipeline."""
         self.model = SentenceTransformer(model_name)
+        self.default_threshold = threshold
     
     def score(self, claim, evidence):
         """Calculate similarity score for a single pair."""
@@ -24,21 +25,25 @@ class SimilarityScorer:
         similarities = torch.nn.functional.cosine_similarity(claim_embeddings, evidence_embeddings)
         return similarities.tolist()
         
-    def predict(self, claim, evidence, threshold=0.5):
+    def predict(self, claim, evidence, threshold=None):
         """Predict whether a claim is supported or hallucinated."""
+        t = threshold if threshold is not None else self.default_threshold
         sim = self.score(claim, evidence)
         return {
             "score": sim,
-            "prediction": "Supported" if sim >= threshold else "Hallucinated"
+            "prediction": "Supported" if sim >= t else "Hallucinated",
+            "threshold_used": t
         }
         
-    def predict_batch(self, claims, evidences, threshold=0.5, batch_size=32):
+    def predict_batch(self, claims, evidences, threshold=None, batch_size=32):
         """Predict whether claims are supported or hallucinated for a batch."""
+        t = threshold if threshold is not None else self.default_threshold
         scores = self.score_batch(claims, evidences, batch_size=batch_size)
         return [
             {
                 "score": score,
-                "prediction": "Supported" if score >= threshold else "Hallucinated"
+                "prediction": "Supported" if score >= t else "Hallucinated",
+                "threshold_used": t
             }
             for score in scores
         ]
