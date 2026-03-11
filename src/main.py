@@ -1,12 +1,11 @@
-from pipeline import HallucinationPipeline
+from src.pipeline.pipeline import HallucinationPipeline
 
 def main():
-    pipeline = HallucinationPipeline()
+    pipeline = HallucinationPipeline("configs/default.yaml")
 
-    claim = "The Eiffel Tower is in Berlin."
-    evidence = "The Eiffel Toer is located in Paris, France."
+    claim = "The Eiffel Tower is in Paris."
 
-    result = pipeline.verify(claim, evidence)
+    result = pipeline.verify(claim)
 
     print("Verification Result: ")
     print(result)

@@ -1,0 +1,45 @@
+# DATA SETTINGS
+data:
+  dataset_name: "FEVER"
+  data_path: "data/prepare_fever.py"
+  split: "dev"
+  wiki_fetch_limit: 5 # null download all pages
+
+# MODEL SETTINGS
+models:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  nli_model: "facebook/bart-large-mnli"
+
+# RETRIEVAL SETTINGS
+retrieval:
+  top_k: 5
+  use_gpu: false
+
+  index_path: "indexes/faiss.index"
+  metadata_path: "indexes/metadata.pkl"
+
+  sentences_per_chunk: 4
+  min_chunk_length: 40
+  embedding_batch_size: 64
+
+# SIMILARITY SETTINGS
+similarity:
+  threshold: 0.60
+  batch_size: 32
+
+# NLI SETTINGS
+nli:
+  max_length: 512
+  device: "auto"   # auto | cpu | cuda
+
+# AGGREGATION SETTINGS
+aggregation:
+  similarity_weight: 0.4
+  entailment_weight: 0.6
+  contradiction_rule: "contra_greater_than_entail"
+
+# EXPERIMENT SETTINGS
+experiment:
+  seed: 42
+  save_results: true
+  results_path: "results/"

@@ -4,13 +4,20 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from typing import Dict
 
 class NLIVerifier:
-    def __init__(self, model_name="facebook/bart-large-mnli"):
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    def __init__(self, config):
+        model_name = config.get("models", "nli_model")
+        device_setting = config.get("nli", "device")
+
+        if device_setting == "auto":
+            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        else:
+            self.device = torch.device(device_setting)
+        
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
         self.model.to(self.device)
         self.model.eval()
-
+        
         # MNLI label mapping
         self.label_mapping = {
             0: "contradiction",
