@@ -29,11 +29,15 @@ bash setup_and_run.sh
    ```bash
    pip install -r requirements.txt
    ```
-4. Run the application:
+4. Build the Wikipedia retrieval index:
+   ```bash
+   python -m src.scripts.build_index
+   ```
+5. Run the application:
    ```bash
    python src/main.py
    ```
-5. Setup and run
+6. Setup and run
    ```bash
    ./setup_and_run.sh
    ```
