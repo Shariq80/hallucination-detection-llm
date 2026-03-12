@@ -28,7 +28,7 @@ def load_sample_data():
 def tune_threshold(scorer, claims, evidences, labels, start=0.1, end=0.9, step=0.05):
     """Iterates through thresholds to find the best F1 score."""
     print("Computing similarity scores for tuning dataset...")
-    scores = scorer.score_batch(claims, evidences)
+    scores = scorer.score_batch(claims, evidences, batch_size=scorer.batch_size)
     
     best_f1 = -1.0
     best_threshold = 0.5
@@ -56,7 +56,12 @@ def tune_threshold(scorer, claims, evidences, labels, start=0.1, end=0.9, step=0
     return best_threshold, best_f1, results
 
 if __name__ == "__main__":
-    scorer = SimilarityScorer()
+    import sys, os
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from utils.config import Config
+    
+    config = Config()
+    scorer = SimilarityScorer(config)
     claims, evidences, labels = load_sample_data()
     
     best_t, best_f1, _ = tune_threshold(scorer, claims, evidences, labels)
