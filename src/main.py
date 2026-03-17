@@ -7,7 +7,7 @@ def main():
 
     result = pipeline.verify(claim)
 
-    print("Verification Result: ")
+    print("Final Verification Result: ")
     print(result)
 
 if __name__ == "__main__":

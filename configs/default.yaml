@@ -3,7 +3,7 @@ data:
   dataset_name: "FEVER"
   data_path: "data/prepare_fever.py"
   split: "dev"
-  wiki_fetch_limit: 5 # null download all pages
+  wiki_fetch_limit: null # null download all pages
 
 # MODEL SETTINGS
 models:
@@ -36,6 +36,7 @@ nli:
 aggregation:
   similarity_weight: 0.4
   entailment_weight: 0.6
+  contradiction_threshold: 0.5
   contradiction_rule: "contra_greater_than_entail"
 
 # EXPERIMENT SETTINGS
