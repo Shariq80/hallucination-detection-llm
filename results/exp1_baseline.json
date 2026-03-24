@@ -1,0 +1,1651 @@
+{
+    "config": "configs/exp1_baseline.yaml",
+    "metrics": {
+        "accuracy": 0.6,
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1": 0.33333333333333337
+    },
+    "results": [
+        {
+            "claim": "The Eiffel Tower is in Paris.",
+            "true_label": "SUPPORTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "The Eiffel Tower is in Paris.",
+                "evidence": [
+                    {
+                        "title": "Paris",
+                        "text": "Paris's top cultural attractions in 2022 were the Louvre Museum (7.7 million visitors), the Eiffel Tower (5.8 million visitors), the Mus\u00e9e d'Orsay (3.27 million visitors) and the Centre Pompidou (3 million visitors). In 2019, Greater Paris had 2,056 hotels, including 94 five-star hotels, with a total of 121,646 rooms. In 2019, in addition to the hotels, Greater Paris had 60,000 homes registered with Airbnb. Under French law, renters of these units must pay the Paris tourism tax.",
+                        "retriever_score": 0.5778860449790955,
+                        "similarity_score": 0.5772345066070557,
+                        "nli_scores": {
+                            "contradiction": 0.0020938939414918423,
+                            "neutral": 0.9989656209945679,
+                            "entailment": 0.0005283011123538017
+                        }
+                    },
+                    {
+                        "title": "Paris",
+                        "text": "The bank of the Seine in the city centre, which includes the Louvre and the Eiffel Tower was classified as a UNESCO World Heritage Site in 1991. Most of the postwar presidents of the Fifth Republic wanted to leave their own monuments in Paris; President Georges Pompidou started the Centre Georges Pompidou (1977), Val\u00e9ry Giscard d'Estaing began the Mus\u00e9e d'Orsay (1986); President Fran\u00e7ois Mitterrand had the Op\u00e9ra Bastille built (1985\u20131989), the new site of the Biblioth\u00e8que nationale de France (1996), the Arche de la D\u00e9fense (1985\u20131989) in La D\u00e9fense, as well as the Louvre Pyramid with its underground courtyard (1983\u20131989); Jacques Chirac (2006), the Mus\u00e9e du quai Branly. In the early 21st century, the population of Paris began to increase slowly again, as more young people moved into the city. It reached 2.25 million in 2011.",
+                        "retriever_score": 0.5446255207061768,
+                        "similarity_score": 0.5443786978721619,
+                        "nli_scores": {
+                            "contradiction": 0.3428509831428528,
+                            "neutral": 0.9992805123329163,
+                            "entailment": 0.0015966732753440738
+                        }
+                    },
+                    {
+                        "title": "Paris",
+                        "text": "Following several months of blockade, hunger, and then bombardment by the Prussians, the city was forced to surrender on 28 January 1871. After seizing power in Paris on 28 March, a revolutionary government known as the Paris Commune held power for two months, before being harshly suppressed by the French army during the \"Bloody Week\" at the end of May 1871. In the late 19th century, Paris hosted two major international expositions: the 1889 Universal Exposition, which featured the new Eiffel Tower, was held to mark the centennial of the French Revolution; and the 1900 Universal Exposition gave Paris the Pont Alexandre III, the Grand Palais, the Petit Palais and the first Paris M\u00e9tro line. Paris became the laboratory of Naturalism (\u00c9mile Zola) and Symbolism (Charles Baudelaire and Paul Verlaine), and of Impressionism in art (Courbet, Manet, Monet, Renoir).",
+                        "retriever_score": 0.5383822321891785,
+                        "similarity_score": 0.5322341918945312,
+                        "nli_scores": {
+                            "contradiction": 0.03344346582889557,
+                            "neutral": 0.9967259168624878,
+                            "entailment": 0.001017984701320529
+                        }
+                    },
+                    {
+                        "title": "Wembley Stadium",
+                        "text": "For the new stadium the level of the pitch was lowered. During excavation of the new playing field, mechanical diggers unearthed a buried obstruction: the concrete foundations of Watkin's Tower, a failed attempt to construct a rival to the Eiffel Tower in London. Only the base of the tower was ever built before being abandoned and demolished in 1907; the site was later used as the location for the first Wembley Stadium. === Handover and opening === The new stadium was completed and handed over to the FA on 9 March 2007.",
+                        "retriever_score": 0.5195206999778748,
+                        "similarity_score": 0.5228425860404968,
+                        "nli_scores": {
+                            "contradiction": 0.9978716373443604,
+                            "neutral": 0.9861553311347961,
+                            "entailment": 0.008569254539906979
+                        }
+                    },
+                    {
+                        "title": "Paris M\u00e9tro",
+                        "text": "On 19 November 1871 the General Council of the Seine commissioned a team of 40 engineers to plan an urban rail network. This team proposed a network with a pattern of routes \"resembling a cross enclosed in a circle\" with axial routes following large boulevards. On 11 May 1872 the Council endorsed the plan, but the French government turned down the plan. After this point, a serious debate occurred over whether the new system should consist of elevated lines or of mostly underground lines; this debate involved numerous parties in France, including Victor Hugo, Guy de Maupassant, and the Eiffel Society of Gustave Eiffel, and continued until 1892.",
+                        "retriever_score": 0.511685848236084,
+                        "similarity_score": 0.4386643171310425,
+                        "nli_scores": {
+                            "contradiction": 0.10088472813367844,
+                            "neutral": 0.9991672039031982,
+                            "entailment": 0.007224965840578079
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.23016383633948864,
+                    "best_entailment": 0.0005283011123538017,
+                    "best_contradiction": 0.0020938939414918423,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Paris",
+                        "text": "Paris's top cultural attractions in 2022 were the Louvre Museum (7.7 million visitors), the Eiffel Tower (5.8 million visitors), the Mus\u00e9e d'Orsay (3.27 million visitors) and the Centre Pompidou (3 million visitors). In 2019, Greater Paris had 2,056 hotels, including 94 five-star hotels, with a total of 121,646 rooms. In 2019, in addition to the hotels, Greater Paris had 60,000 homes registered with Airbnb. Under French law, renters of these units must pay the Paris tourism tax.",
+                        "retriever_score": 0.5778860449790955,
+                        "similarity_score": 0.5772345066070557,
+                        "nli_scores": {
+                            "contradiction": 0.0020938939414918423,
+                            "neutral": 0.9989656209945679,
+                            "entailment": 0.0005283011123538017
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "Barack Obama was the 44th president of the United States.",
+            "true_label": "SUPPORTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "Barack Obama was the 44th president of the United States.",
+                "evidence": [
+                    {
+                        "title": "Presidency of Barack Obama",
+                        "text": "Barack Obama's tenure as the 44th president of the United States began with his first inauguration on January 20, 2009, and ended on January 20, 2017. Obama, a Democrat from Illinois, took office after defeating the Republican nominee John McCain in the 2008 presidential election. Four years later, he won re-election in the 2012 presidential election, after defeating the Republican nominee Mitt Romney. Alongside Obama's presidency, the Democratic Party also held their majorities in the House of Representatives during the 111th U.S. Congress following the 2008 elections, thereby attained an overall federal government trifecta.",
+                        "retriever_score": 0.7057180404663086,
+                        "similarity_score": 0.678833544254303,
+                        "nli_scores": {
+                            "contradiction": 0.967584490776062,
+                            "neutral": 0.9986546039581299,
+                            "entailment": 0.0024619961623102427
+                        }
+                    },
+                    {
+                        "title": "Presidency of Barack Obama",
+                        "text": "As Obama left office, historians expressed various opinions about his effectiveness as president, with many noting that subsequent events would determine his ultimate legacy. There was universal agreement that Obama would long be remembered as the first African-American president. Many noted that Obama presided over an economic recovery and passed major domestic legislation, but failed to bridge a partisan divide and left office with his party in a weakened state. == See also == == Notes == == References == == Further reading == == External links == Obama White House archives The Obama White House's channel on YouTube \"Obama's People\" (photography: Nadav Kander) \"President Barack Obama's Inaugural Address\".",
+                        "retriever_score": 0.6054689884185791,
+                        "similarity_score": 0.5749714374542236,
+                        "nli_scores": {
+                            "contradiction": 0.016000187024474144,
+                            "neutral": 0.9995689988136292,
+                            "entailment": 0.0023012093733996153
+                        }
+                    },
+                    {
+                        "title": "Presidency of Barack Obama",
+                        "text": "On November 4, Obama was projected to have secured the presidency. Obama won the presidential election with 365 electoral votes and 52.9% of the popular vote, while John McCain received 173 electoral votes and 45.7% of the popular vote. In the concurrent congressional elections, Democrats secured a government trifecta after retaining their majorities in the House of Representatives and the Senate, and Speaker of the House Nancy Pelosi and Senate Majority Leader Harry Reid both remained in their posts. Republicans John Boehner and Mitch McConnell continued to serve as House Minority Leader and Senate Minority Leader, respectively.",
+                        "retriever_score": 0.5933035016059875,
+                        "similarity_score": 0.4563620090484619,
+                        "nli_scores": {
+                            "contradiction": 0.43224993348121643,
+                            "neutral": 0.9979984164237976,
+                            "entailment": 0.003991295583546162
+                        }
+                    },
+                    {
+                        "title": "Presidency of Barack Obama",
+                        "text": "Obama was term-limited in 2016 due to the 22nd Amendment, though Obama's approval ratings may have impacted his party's ability to win the race. In June 2016, with the Democratic primaries nearly complete, Obama endorsed former secretary of state Hillary Clinton as his successor. However, according to Glenn Thrush of Politico, Obama had long supported Clinton as his preferred successor, and Obama dissuaded Vice President Biden from running against Clinton. Obama spoke in favor of Clinton at the 2016 Democratic National Convention, and he continued to campaign for Clinton and other Democrats in the months leading up to Election Day.",
+                        "retriever_score": 0.582114577293396,
+                        "similarity_score": 0.5057756900787354,
+                        "nli_scores": {
+                            "contradiction": 0.4799727201461792,
+                            "neutral": 0.9946186542510986,
+                            "entailment": 0.0004127536085434258
+                        }
+                    },
+                    {
+                        "title": "Presidency of Barack Obama",
+                        "text": "However, in the general election, Clinton was defeated by Republican nominee Donald Trump, who prominently questioned Obama's place of birth during Obama's first term. In the concurrent congressional elections, Republicans also retained control of their majorities in the House of Representatives and the Senate. During the eight years of Obama's presidency, the Democratic Party experienced a net loss of 1,041 governorships and state and federal legislative seats. Ronald Brownstein of The Atlantic noted that these losses were similar to those of other post-World War II two-term presidents.",
+                        "retriever_score": 0.5817595720291138,
+                        "similarity_score": 0.4706875681877136,
+                        "nli_scores": {
+                            "contradiction": 0.032486509531736374,
+                            "neutral": 0.9976663589477539,
+                            "entailment": 0.0005593116511590779
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.22336920709349214,
+                    "best_entailment": 0.0023012093733996153,
+                    "best_contradiction": 0.016000187024474144,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Presidency of Barack Obama",
+                        "text": "As Obama left office, historians expressed various opinions about his effectiveness as president, with many noting that subsequent events would determine his ultimate legacy. There was universal agreement that Obama would long be remembered as the first African-American president. Many noted that Obama presided over an economic recovery and passed major domestic legislation, but failed to bridge a partisan divide and left office with his party in a weakened state. == See also == == Notes == == References == == Further reading == == External links == Obama White House archives The Obama White House's channel on YouTube \"Obama's People\" (photography: Nadav Kander) \"President Barack Obama's Inaugural Address\".",
+                        "retriever_score": 0.6054689884185791,
+                        "similarity_score": 0.5749714374542236,
+                        "nli_scores": {
+                            "contradiction": 0.016000187024474144,
+                            "neutral": 0.9995689988136292,
+                            "entailment": 0.0023012093733996153
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "Water boils at 100 degrees Celsius at sea level.",
+            "true_label": "SUPPORTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "Water boils at 100 degrees Celsius at sea level.",
+                "evidence": [
+                    {
+                        "title": "Water",
+                        "text": "Water can remain in a liquid state at high temperatures in the deep ocean or underground. For example, temperatures exceed 205 \u00b0C (401 \u00b0F) in Old Faithful, a geyser in Yellowstone National Park. In hydrothermal vents, the temperature can exceed 400 \u00b0C (752 \u00b0F). At sea level, the boiling point of water is 100 \u00b0C (212 \u00b0F).",
+                        "retriever_score": 0.5989751815795898,
+                        "similarity_score": 0.6197857856750488,
+                        "nli_scores": {
+                            "contradiction": 0.2655629515647888,
+                            "neutral": 0.9679570198059082,
+                            "entailment": 0.9912064671516418
+                        }
+                    },
+                    {
+                        "title": "Water",
+                        "text": "As atmospheric pressure decreases with altitude, the boiling point decreases by 1 \u00b0C every 274 meters. High-altitude cooking takes longer than sea-level cooking. For example, at 1,524 metres (5,000 ft), cooking time must be increased by a fourth to achieve the desired result. Conversely, a pressure cooker can be used to decrease cooking times by raising the boiling temperature.",
+                        "retriever_score": 0.5616973042488098,
+                        "similarity_score": 0.5350580215454102,
+                        "nli_scores": {
+                            "contradiction": 0.010519517585635185,
+                            "neutral": 0.9931175708770752,
+                            "entailment": 0.01853668875992298
+                        }
+                    },
+                    {
+                        "title": "Water",
+                        "text": "Solutes such as salts and sugars found in water affect the physical properties of water. The boiling and freezing points of water are affected by solutes, as well as air pressure, which is in turn affected by altitude. Water boils at lower temperatures with the lower air pressure that occurs at higher elevations. One mole of sucrose (sugar) per kilogram of water raises the boiling point of water by 0.51 \u00b0C (0.918 \u00b0F), and one mole of salt per kg raises the boiling point by 1.02 \u00b0C (1.836 \u00b0F); similarly, increasing the number of dissolved particles lowers water's freezing point.",
+                        "retriever_score": 0.5583948493003845,
+                        "similarity_score": 0.5493863821029663,
+                        "nli_scores": {
+                            "contradiction": 0.06819996237754822,
+                            "neutral": 0.9969176054000854,
+                            "entailment": 0.034034229815006256
+                        }
+                    },
+                    {
+                        "title": "Water",
+                        "text": "The scale is an absolute temperature scale with the same increment as the Celsius temperature scale, which was originally defined according to the boiling point (set to 100 \u00b0C (212 \u00b0F)) and melting point (set to 0 \u00b0C (32 \u00b0F)) of water. Natural water consists mainly of the isotopes hydrogen-1 and oxygen-16, but there is also a small quantity of heavier isotopes oxygen-18, oxygen-17, and hydrogen-2 (deuterium). The percentage of the heavier isotopes is very small, but it still affects the properties of water. Water from rivers and lakes tends to contain less heavy isotopes than seawater.",
+                        "retriever_score": 0.534788966178894,
+                        "similarity_score": 0.5439132452011108,
+                        "nli_scores": {
+                            "contradiction": 0.30133679509162903,
+                            "neutral": 0.9982962012290955,
+                            "entailment": 0.012066216208040714
+                        }
+                    },
+                    {
+                        "title": "Water",
+                        "text": "In a vacuum, water will boil at room temperature. ==== Triple and critical points ==== On a pressure/temperature phase diagram (see figure), there are curves separating solid from vapor, vapor from liquid, and liquid from solid. These meet at a single point called the triple point, where all three phases can coexist. The triple point is at a temperature of 273.16 K (0.01 \u00b0C; 32.02 \u00b0F) and a pressure of 611.657 pascals (0.00604 atm; 0.0887 psi); it is the lowest pressure at which liquid water can exist.",
+                        "retriever_score": 0.5251235961914062,
+                        "similarity_score": 0.5548607110977173,
+                        "nli_scores": {
+                            "contradiction": 0.8688753247261047,
+                            "neutral": 0.8668943643569946,
+                            "entailment": 0.1310955435037613
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.7098567187786102,
+                    "best_entailment": 0.9912064671516418,
+                    "best_contradiction": 0.2655629515647888,
+                    "label": "SUPPORTED",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Water",
+                        "text": "Water can remain in a liquid state at high temperatures in the deep ocean or underground. For example, temperatures exceed 205 \u00b0C (401 \u00b0F) in Old Faithful, a geyser in Yellowstone National Park. In hydrothermal vents, the temperature can exceed 400 \u00b0C (752 \u00b0F). At sea level, the boiling point of water is 100 \u00b0C (212 \u00b0F).",
+                        "retriever_score": 0.5989751815795898,
+                        "similarity_score": 0.6197857856750488,
+                        "nli_scores": {
+                            "contradiction": 0.2655629515647888,
+                            "neutral": 0.9679570198059082,
+                            "entailment": 0.9912064671516418
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "The Great Wall of China is visible from space is a myth.",
+            "true_label": "SUPPORTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "The Great Wall of China is visible from space is a myth.",
+                "evidence": [
+                    {
+                        "title": "Richard Nixon",
+                        "text": "When not in meetings, Nixon toured architectural wonders, including the Forbidden City, the Ming tombs, and the Great Wall. Americans took their first glance into everyday Chinese life through the cameras that accompanied Pat Nixon, who toured the city of Beijing and visited communes, schools, factories, and hospitals. The visit ushered in a new era of US\u2013China relations. Fearing the possibility of a US\u2013China alliance, the Soviet Union yielded to pressure for d\u00e9tente with the United States.",
+                        "retriever_score": 0.4575560688972473,
+                        "similarity_score": 0.4370487630367279,
+                        "nli_scores": {
+                            "contradiction": 0.5137415528297424,
+                            "neutral": 0.9941756725311279,
+                            "entailment": 0.002054197248071432
+                        }
+                    },
+                    {
+                        "title": "WALL-E",
+                        "text": "43 (1): 12\u201320. doi:10.1080/10457097.2013.784576. ISSN 1045-7097. S2CID 144206190.",
+                        "retriever_score": 0.4360145926475525,
+                        "similarity_score": 0.10147040337324142,
+                        "nli_scores": {
+                            "contradiction": 0.5341917872428894,
+                            "neutral": 0.9621140360832214,
+                            "entailment": 0.06521543115377426
+                        }
+                    },
+                    {
+                        "title": "Temple Mount",
+                        "text": "The southern section of the western flank is revealed and contains what is known as the Western Wall. The retaining walls on these two sides descend many meters below ground level. A northern portion of the western wall may be seen from within the Western Wall Tunnel, which was excavated through buildings adjacent to the platform. On the southern and eastern sides, the walls are visible almost to their full height.",
+                        "retriever_score": 0.4301389455795288,
+                        "similarity_score": 0.40507179498672485,
+                        "nli_scores": {
+                            "contradiction": 0.8116270303726196,
+                            "neutral": 0.9670935273170471,
+                            "entailment": 0.0037235275376588106
+                        }
+                    },
+                    {
+                        "title": "WALL-E",
+                        "text": "Stanton wanted the Axiom's interior to resemble Shanghai and Dubai. Eggleston studied 1960s NASA paintings and the original concept art for Tomorrowland for the Axiom, to reflect that era's sense of optimism. Stanton remarked \"We are all probably very similar in our backgrounds here [at Pixar] in that we all miss the Tomorrowland that was promised us from the heyday of Disneyland,\" and wanted a \"jet pack\" feel. Pixar also studied the Disney Cruise Line and visited Las Vegas, which was helpful in understanding artificial lighting.",
+                        "retriever_score": 0.42464131116867065,
+                        "similarity_score": 0.30315977334976196,
+                        "nli_scores": {
+                            "contradiction": 0.30247682332992554,
+                            "neutral": 0.9914383888244629,
+                            "entailment": 0.002130469074472785
+                        }
+                    },
+                    {
+                        "title": "Second Temple",
+                        "text": "In Bava Batra 4a, it states: \"He who has not seen the Temple of Herod has never seen a beautiful building\". Similarly, in Sukkah 51b: \"He who has not seen the Temple in its full construction has never seen a glorious building in his life. Which Temple? \u2013 Abaye, or it might be said, Rabbi Hisda, replied, The reference is to the building of Herod\".",
+                        "retriever_score": 0.41871562600135803,
+                        "similarity_score": 0.433626264333725,
+                        "nli_scores": {
+                            "contradiction": 0.9906153678894043,
+                            "neutral": 0.7260522842407227,
+                            "entailment": 0.008097521029412746
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.0,
+                    "best_entailment": 0.0,
+                    "best_contradiction": 0.0,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": null
+                }
+            }
+        },
+        {
+            "claim": "Python is a programming language.",
+            "true_label": "SUPPORTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "Python is a programming language.",
+                "evidence": [
+                    {
+                        "title": "Software",
+                        "text": "Since the 1950s, thousands of different programming languages have been invented; some have been in use for decades, while others have fallen into disuse. Some definitions classify machine code\u2014the exact instructions directly implemented by the hardware\u2014and assembly language\u2014a more human-readable alternative to machine code whose statements can be translated one-to-one into machine code\u2014as programming languages. Programs written in the high-level programming languages used to create software share a few main characteristics: knowledge of machine code is not necessary to write them, they can be ported to other computer systems, and they are more concise and human-readable than machine code. They must be both human-readable and capable of being translated into unambiguous instructions for computer hardware.",
+                        "retriever_score": 0.5094016790390015,
+                        "similarity_score": 0.5056307315826416,
+                        "nli_scores": {
+                            "contradiction": 0.026085015386343002,
+                            "neutral": 0.9984418749809265,
+                            "entailment": 0.0641823559999466
+                        }
+                    },
+                    {
+                        "title": "Software",
+                        "text": "Although some vulnerabilities can only be used for denial of service attacks that compromise a system's availability, others allow the attacker to inject and run their own code (called malware), without the user being aware of it. To thwart cyberattacks, all software in the system must be designed to withstand and recover from external attack. Despite efforts to ensure security, a significant fraction of computers are infected with malware. == Encoding and execution == === Programming languages === Programming languages are the format in which software is written.",
+                        "retriever_score": 0.4573062062263489,
+                        "similarity_score": 0.42366743087768555,
+                        "nli_scores": {
+                            "contradiction": 0.025205126032233238,
+                            "neutral": 0.9990676045417786,
+                            "entailment": 0.5273723006248474
+                        }
+                    },
+                    {
+                        "title": "Minimalist program",
+                        "text": "Language is a computational system. The language faculty consists of a computational system (CHL) whose initial state (S0) contains invariant principles and parameters. Language acquisition consists of acquiring a lexicon and fixing the parameter values of the target language. Language generates an infinite set of expressions given as a sound-meaning pair (\u03c0, \u03bb).",
+                        "retriever_score": 0.4439367651939392,
+                        "similarity_score": 0.41977351903915405,
+                        "nli_scores": {
+                            "contradiction": 0.2753872573375702,
+                            "neutral": 0.9929720759391785,
+                            "entailment": 0.9303408265113831
+                        }
+                    },
+                    {
+                        "title": "Software",
+                        "text": "Some programming languages use an interpreter instead of a compiler. An interpreter converts the program into machine code at run time, which makes them 10 to 100 times slower than compiled programming languages. == Legal issues == === Liability === Software is often released with the knowledge that it is incomplete or contains bugs. Purchasers knowingly buy it in this state, which has led to a legal regime where liability for software products is significantly curtailed compared to other products.",
+                        "retriever_score": 0.4297158420085907,
+                        "similarity_score": 0.4010349214076996,
+                        "nli_scores": {
+                            "contradiction": 0.8983892202377319,
+                            "neutral": 0.9726752042770386,
+                            "entailment": 0.4268495738506317
+                        }
+                    },
+                    {
+                        "title": "Software",
+                        "text": "Software consists of computer programs that instruct the execution of a computer. Software also includes design documents and specifications. The history of software is closely tied to the development of digital computers in the mid-20th century. Early programs were written in the machine language specific to the hardware.",
+                        "retriever_score": 0.4291812777519226,
+                        "similarity_score": 0.4308445155620575,
+                        "nli_scores": {
+                            "contradiction": 0.05509519577026367,
+                            "neutral": 0.999007523059845,
+                            "entailment": 0.8019445538520813
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.22771919853985312,
+                    "best_entailment": 0.0641823559999466,
+                    "best_contradiction": 0.026085015386343002,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Software",
+                        "text": "Since the 1950s, thousands of different programming languages have been invented; some have been in use for decades, while others have fallen into disuse. Some definitions classify machine code\u2014the exact instructions directly implemented by the hardware\u2014and assembly language\u2014a more human-readable alternative to machine code whose statements can be translated one-to-one into machine code\u2014as programming languages. Programs written in the high-level programming languages used to create software share a few main characteristics: knowledge of machine code is not necessary to write them, they can be ported to other computer systems, and they are more concise and human-readable than machine code. They must be both human-readable and capable of being translated into unambiguous instructions for computer hardware.",
+                        "retriever_score": 0.5094016790390015,
+                        "similarity_score": 0.5056307315826416,
+                        "nli_scores": {
+                            "contradiction": 0.026085015386343002,
+                            "neutral": 0.9984418749809265,
+                            "entailment": 0.0641823559999466
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "The capital of Japan is Tokyo.",
+            "true_label": "SUPPORTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "The capital of Japan is Tokyo.",
+                "evidence": [
+                    {
+                        "title": "Edo",
+                        "text": "The city was home to samurai officials, townspeople (ch\u014dnin), and artisans, and served as a centre of economic activity, urban cultural practices, and administrative organization during the Tokugawa era. Following the overthrow of the Tokugawa shogunate in 1868, the city formerly known as Edo was renamed T\u014dky\u014d (\"Eastern Capital\"), and the emperor\u2019s residence was moved there from Kyoto, establishing Tokyo as the capital of Japan. The development of Edo during the Tokugawa period (1603\u20111868) influenced the later growth and urban character of Tokyo after the Meiji Restoration. == History == === Before Tokugawa === Before the 10th century, there is no mention of Edo in historical records, but for a few settlements in the area.",
+                        "retriever_score": 0.6795001029968262,
+                        "similarity_score": 0.6790344715118408,
+                        "nli_scores": {
+                            "contradiction": 0.06767045706510544,
+                            "neutral": 0.9958778619766235,
+                            "entailment": 0.0028510596603155136
+                        }
+                    },
+                    {
+                        "title": "Shogun",
+                        "text": "31 (1): 29\u201349. doi:10.2307/2384184. JSTOR 2384184. \"Japan\".",
+                        "retriever_score": 0.6259888410568237,
+                        "similarity_score": 0.6399098634719849,
+                        "nli_scores": {
+                            "contradiction": 0.6827688217163086,
+                            "neutral": 0.9521721601486206,
+                            "entailment": 0.8204053640365601
+                        }
+                    },
+                    {
+                        "title": "Consolidated city-county",
+                        "text": "The original Tokyo City was split into 23 \"special wards\" which effectively function as cities. In addition, there are also 23 cities, 5 towns and 8 villages within Tokyo. Under this structure, Tokyo does not have a single mayor, but rather a governor and numerous local mayors. Further, some responsibilities that would normally be held by the cities are instead held by the metropolitan government.",
+                        "retriever_score": 0.6122670769691467,
+                        "similarity_score": 0.5637118220329285,
+                        "nli_scores": {
+                            "contradiction": 0.08509641140699387,
+                            "neutral": 0.9995365142822266,
+                            "entailment": 0.0013645213330164552
+                        }
+                    },
+                    {
+                        "title": "Metropolis",
+                        "text": "==== Japan ==== The Japanese legal term to (\u90fd) is by designation to be translated as \"metropolis\". However, existing translations predate the designation. Structured like a prefecture instead of a normal city, there is only one to in Japan, namely Tokyo. As of 2020, Japan has 12 other cities with populations greater than one million.",
+                        "retriever_score": 0.6104722619056702,
+                        "similarity_score": 0.6256529092788696,
+                        "nli_scores": {
+                            "contradiction": 0.5214518308639526,
+                            "neutral": 0.9996858835220337,
+                            "entailment": 0.4056456983089447
+                        }
+                    },
+                    {
+                        "title": "Edo",
+                        "text": "The Sumida River, then called the Great River (\u5927\u5ddd, \u014ckawa), ran on the eastern side of the city. The shogunate's official rice-storage warehouses and other official buildings were located here. The Nihonbashi bridge (\u65e5\u672c\u6a4b; lit. \"bridge of Japan\") marked the center of the city's commercial center and the starting point of the gokaid\u014d (thus making it the de facto \"center of the country\").",
+                        "retriever_score": 0.605398952960968,
+                        "similarity_score": 0.5870089530944824,
+                        "nli_scores": {
+                            "contradiction": 0.02997758239507675,
+                            "neutral": 0.9848315715789795,
+                            "entailment": 0.08651355654001236
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.40682275295257564,
+                    "best_entailment": 0.8204053640365601,
+                    "best_contradiction": 0.6827688217163086,
+                    "label": "SUPPORTED",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Shogun",
+                        "text": "31 (1): 29\u201349. doi:10.2307/2384184. JSTOR 2384184. \"Japan\".",
+                        "retriever_score": 0.6259888410568237,
+                        "similarity_score": 0.6399098634719849,
+                        "nli_scores": {
+                            "contradiction": 0.6827688217163086,
+                            "neutral": 0.9521721601486206,
+                            "entailment": 0.8204053640365601
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "The human heart pumps blood.",
+            "true_label": "SUPPORTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "The human heart pumps blood.",
+                "evidence": [
+                    {
+                        "title": "Heart",
+                        "text": "The heart is a muscular organ found in humans and other animals. This organ pumps blood through the blood vessels. The heart and blood vessels together make up the circulatory system. The pumped blood carries oxygen and nutrients to the tissue, while carrying metabolic waste such as carbon dioxide to the lungs.",
+                        "retriever_score": 0.7008039951324463,
+                        "similarity_score": 0.7345643043518066,
+                        "nli_scores": {
+                            "contradiction": 0.0018663102528080344,
+                            "neutral": 0.9989553689956665,
+                            "entailment": 0.8503981232643127
+                        }
+                    },
+                    {
+                        "title": "Heart",
+                        "text": "In this system, deoxygenated blood collects around the heart in cavities (sinuses). This blood slowly permeates the heart through many small one-way channels. The heart then pumps the blood into the hemocoel, a cavity between the organs. The heart in arthropods is typically a muscular tube that runs the length of the body, under the back and from the base of the head.",
+                        "retriever_score": 0.6614633798599243,
+                        "similarity_score": 0.6554193496704102,
+                        "nli_scores": {
+                            "contradiction": 0.8926370739936829,
+                            "neutral": 0.9928086996078491,
+                            "entailment": 0.05906745791435242
+                        }
+                    },
+                    {
+                        "title": "Heart",
+                        "text": "The blood collects in the right atrium. When the right atrium contracts, the blood is pumped through the tricuspid valve into the right ventricle. As the right ventricle contracts, the tricuspid valve closes and the blood is pumped into the pulmonary trunk through the pulmonary valve. The pulmonary trunk divides into pulmonary arteries and progressively smaller arteries throughout the lungs, until it reaches capillaries.",
+                        "retriever_score": 0.650086522102356,
+                        "similarity_score": 0.6162005662918091,
+                        "nli_scores": {
+                            "contradiction": 0.04966479539871216,
+                            "neutral": 0.9982414245605469,
+                            "entailment": 0.014481138437986374
+                        }
+                    },
+                    {
+                        "title": "Heart",
+                        "text": "In humans, deoxygenated blood enters the heart through the right atrium from the superior and inferior venae cavae and passes to the right ventricle. From here, it is pumped into pulmonary circulation to the lungs, where it receives oxygen and gives off carbon dioxide. Oxygenated blood then returns to the left atrium, passes through the left ventricle and is pumped out through the aorta into systemic circulation, traveling through arteries, arterioles, and capillaries\u2014where nutrients and other substances are exchanged between blood vessels and cells, losing oxygen and gaining carbon dioxide\u2014before being returned to the heart through venules and veins. The adult heart beats at a resting rate close to 72 beats per minute.",
+                        "retriever_score": 0.6322169303894043,
+                        "similarity_score": 0.625749945640564,
+                        "nli_scores": {
+                            "contradiction": 0.05942346900701523,
+                            "neutral": 0.9993046522140503,
+                            "entailment": 0.035423461347818375
+                        }
+                    },
+                    {
+                        "title": "Heart",
+                        "text": "The heart is enclosed in a protective sac, the pericardium, which also contains a small amount of fluid. The wall of the heart is made up of three layers: epicardium, myocardium, and endocardium. The heart pumps blood with a rhythm determined by a group of pacemaker cells in the sinoatrial node. These generate an electric current that causes the heart to contract, traveling through the atrioventricular node and along the conduction system of the heart.",
+                        "retriever_score": 0.6314677000045776,
+                        "similarity_score": 0.614827036857605,
+                        "nli_scores": {
+                            "contradiction": 0.00652866018936038,
+                            "neutral": 0.9991546869277954,
+                            "entailment": 0.02402748167514801
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.8031314405729062,
+                    "best_entailment": 0.8503981232643127,
+                    "best_contradiction": 0.0018663102528080344,
+                    "label": "SUPPORTED",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Heart",
+                        "text": "The heart is a muscular organ found in humans and other animals. This organ pumps blood through the blood vessels. The heart and blood vessels together make up the circulatory system. The pumped blood carries oxygen and nutrients to the tissue, while carrying metabolic waste such as carbon dioxide to the lungs.",
+                        "retriever_score": 0.7008039951324463,
+                        "similarity_score": 0.7345643043518066,
+                        "nli_scores": {
+                            "contradiction": 0.0018663102528080344,
+                            "neutral": 0.9989553689956665,
+                            "entailment": 0.8503981232643127
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "The Eiffel Tower is in Berlin.",
+            "true_label": "REFUTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "The Eiffel Tower is in Berlin.",
+                "evidence": [
+                    {
+                        "title": "Berlin",
+                        "text": "Charlottenburg Palace, which was burnt out in the Second World War, is the largest historical palace in Berlin. The Funkturm Berlin is a 150-meter-tall (490 ft) lattice radio tower in the fairground area, built between 1924 and 1926. It is the only observation tower which stands on insulators and has a restaurant 55 m (180 ft) and an observation deck 126 m (413 ft) above ground, which is reachable by a windowed elevator. The Oberbaumbr\u00fccke over the Spree river is Berlin's most iconic bridge, connecting the now-combined boroughs of Friedrichshain and Kreuzberg.",
+                        "retriever_score": 0.6562617421150208,
+                        "similarity_score": 0.660425066947937,
+                        "nli_scores": {
+                            "contradiction": 0.9908121228218079,
+                            "neutral": 0.8892595171928406,
+                            "entailment": 0.0009411110659129918
+                        }
+                    },
+                    {
+                        "title": "Berlin",
+                        "text": "After the reunification, many important heritage structures have been reconstructed, including the Forum Fridericianum along with the Berlin State Opera, Charlottenburg Palace, Gendarmenmarkt, Alte Kommandantur, as well as the City Palace. The tallest buildings in Berlin are spread across the urban area, with clusters at Potsdamer Platz, City West, and Alexanderplatz. Over one-third of the city's area consists of green and open-space, with the Gro\u00dfer Tiergarten, one of the largest and most popular parks in Berlin, located in the centre of the city. === Architecture === The Fernsehturm (TV tower) at Alexanderplatz in Mitte is among the tallest structures in the European Union at 368 m (1,207 ft).",
+                        "retriever_score": 0.6228716969490051,
+                        "similarity_score": 0.6163054704666138,
+                        "nli_scores": {
+                            "contradiction": 0.9965754151344299,
+                            "neutral": 0.9986886382102966,
+                            "entailment": 0.0006202710792422295
+                        }
+                    },
+                    {
+                        "title": "Berlin",
+                        "text": "Built in 1969, it is visible throughout most of the central districts of Berlin. The city can be viewed from its 204-meter-high (669 ft) observation floor. Starting here, the Karl-Marx-Allee heads east, an avenue lined by monumental residential buildings, designed in the Socialist Classicism style. Adjacent to this area is the Rotes Rathaus (City Hall), with its distinctive red-brick architecture.",
+                        "retriever_score": 0.5744484663009644,
+                        "similarity_score": 0.5589494705200195,
+                        "nli_scores": {
+                            "contradiction": 0.017333516851067543,
+                            "neutral": 0.9985968470573425,
+                            "entailment": 0.004398024175316095
+                        }
+                    },
+                    {
+                        "title": "Berlin",
+                        "text": "Also on the island and next to the Lustgarten and palace is Berlin Cathedral, emperor William II's ambitious attempt to create a Protestant counterpart to St. Peter's Basilica in Rome. A large crypt houses the remains of some of the earlier Prussian royal family. St. Hedwig's Cathedral is Berlin's Roman Catholic cathedral. Unter den Linden is a tree-lined east\u2013west avenue from the Brandenburg Gate to the Berlin Palace, and was once Berlin's premier promenade.",
+                        "retriever_score": 0.5428875088691711,
+                        "similarity_score": 0.5298303365707397,
+                        "nli_scores": {
+                            "contradiction": 0.9980078339576721,
+                            "neutral": 0.9904258847236633,
+                            "entailment": 0.04578770697116852
+                        }
+                    },
+                    {
+                        "title": "Berlin",
+                        "text": "Nearby on Tauentzienstra\u00dfe is KaDeWe, claimed to be continental Europe's largest department store. The Rathaus Sch\u00f6neberg, where John F. Kennedy made his famous \"Ich bin ein Berliner!\" speech, is in Tempelhof-Sch\u00f6neberg. West of the center, Bellevue Palace is the residence of the German President.",
+                        "retriever_score": 0.5423657298088074,
+                        "similarity_score": 0.5341402292251587,
+                        "nli_scores": {
+                            "contradiction": 0.9940547347068787,
+                            "neutral": 0.9987366795539856,
+                            "entailment": 0.022756226360797882
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.21755184428766372,
+                    "best_entailment": 0.004398024175316095,
+                    "best_contradiction": 0.017333516851067543,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Berlin",
+                        "text": "Built in 1969, it is visible throughout most of the central districts of Berlin. The city can be viewed from its 204-meter-high (669 ft) observation floor. Starting here, the Karl-Marx-Allee heads east, an avenue lined by monumental residential buildings, designed in the Socialist Classicism style. Adjacent to this area is the Rotes Rathaus (City Hall), with its distinctive red-brick architecture.",
+                        "retriever_score": 0.5744484663009644,
+                        "similarity_score": 0.5589494705200195,
+                        "nli_scores": {
+                            "contradiction": 0.017333516851067543,
+                            "neutral": 0.9985968470573425,
+                            "entailment": 0.004398024175316095
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "Barack Obama was born in Canada.",
+            "true_label": "REFUTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "Barack Obama was born in Canada.",
+                "evidence": [
+                    {
+                        "title": "Presidency of Barack Obama",
+                        "text": "As president, Obama faced numerous taunts and racial innuendos, though most overt racist comments were limited to a small fringe. Donald Trump theorized that Obama had been born in Kenya; an April 2011 CNN poll taken shortly before Obama released his long-form birth certificate found that 40% of Republicans believed that Obama had been born in Kenya. Many of these \"birthers\" argued that because Obama was (allegedly) not a citizen, he was not eligible to serve as president under the natural-born-citizen requirements of the Constitution. Despite Obama's release of his long-form birth certificate, which affirmed that Obama was born in Hawaii, a 2015 CNN poll found that 20% of Americans believed that Obama was born outside of the country.",
+                        "retriever_score": 0.6270276308059692,
+                        "similarity_score": 0.5984112620353699,
+                        "nli_scores": {
+                            "contradiction": 0.3245179355144501,
+                            "neutral": 0.9982995390892029,
+                            "entailment": 0.0008201755117624998
+                        }
+                    },
+                    {
+                        "title": "Illinois",
+                        "text": "He served in the General Assembly and represented the 7th congressional district in the U.S. House of Representatives before his election to the presidency in 1860. Ulysses S. Grant was born in Ohio and had a military career that precluded settling down, but on the eve of the Civil War and approaching middle age, he moved to Illinois and thus utilized the state as his home and political base when running for president. Barack Obama was born in Hawaii and made Illinois his home after graduating from law school, and later represented Illinois in the U.S. Senate. He then became president in 2008, running as a candidate from his Illinois base.",
+                        "retriever_score": 0.5046775937080383,
+                        "similarity_score": 0.4975219666957855,
+                        "nli_scores": {
+                            "contradiction": 0.9975687861442566,
+                            "neutral": 0.9913540482521057,
+                            "entailment": 0.014132412150502205
+                        }
+                    },
+                    {
+                        "title": "Astronaut",
+                        "text": "In 1984, Marc Garneau became the first of eight Canadian astronauts to fly in space (through 2010). The first person born in Africa to fly in space was Patrick Baudry of France, in 1985. In same NASA flight as the Frenchman was the Saudi Arabian Prince Sultan Bin Salman Bin AbdulAziz Al-Saud, who became the first Muslim and Arab astronaut. In 1985, Rodolfo Neri Vela became the first Mexican-born person in space.",
+                        "retriever_score": 0.4586644172668457,
+                        "similarity_score": 0.45611998438835144,
+                        "nli_scores": {
+                            "contradiction": 0.9647649526596069,
+                            "neutral": 0.9375438690185547,
+                            "entailment": 0.000563028093893081
+                        }
+                    },
+                    {
+                        "title": "Presidency of Barack Obama",
+                        "text": "Barack Obama's tenure as the 44th president of the United States began with his first inauguration on January 20, 2009, and ended on January 20, 2017. Obama, a Democrat from Illinois, took office after defeating the Republican nominee John McCain in the 2008 presidential election. Four years later, he won re-election in the 2012 presidential election, after defeating the Republican nominee Mitt Romney. Alongside Obama's presidency, the Democratic Party also held their majorities in the House of Representatives during the 111th U.S. Congress following the 2008 elections, thereby attained an overall federal government trifecta.",
+                        "retriever_score": 0.45598649978637695,
+                        "similarity_score": 0.43376049399375916,
+                        "nli_scores": {
+                            "contradiction": 0.3916659951210022,
+                            "neutral": 0.9952549934387207,
+                            "entailment": 0.009698779322206974
+                        }
+                    },
+                    {
+                        "title": "Illinois",
+                        "text": "Ronald Reagan was born in Illinois, in the city of Tampico, raised in Dixon, Illinois, and educated at Eureka College, outside Peoria. Reagan later moved to California during his young adulthood. He then became an actor, and later became California's Governor before being elected president. Hillary Clinton was born and raised in the suburbs of Chicago and became the first woman to represent a major political party in the general election of the U.S. presidency.",
+                        "retriever_score": 0.44774505496025085,
+                        "similarity_score": 0.43699878454208374,
+                        "nli_scores": {
+                            "contradiction": 0.9807213544845581,
+                            "neutral": 0.9746096134185791,
+                            "entailment": 0.09731927514076233
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.07759764236398042,
+                    "best_entailment": 0.0008201755117624998,
+                    "best_contradiction": 0.3245179355144501,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Presidency of Barack Obama",
+                        "text": "As president, Obama faced numerous taunts and racial innuendos, though most overt racist comments were limited to a small fringe. Donald Trump theorized that Obama had been born in Kenya; an April 2011 CNN poll taken shortly before Obama released his long-form birth certificate found that 40% of Republicans believed that Obama had been born in Kenya. Many of these \"birthers\" argued that because Obama was (allegedly) not a citizen, he was not eligible to serve as president under the natural-born-citizen requirements of the Constitution. Despite Obama's release of his long-form birth certificate, which affirmed that Obama was born in Hawaii, a 2015 CNN poll found that 20% of Americans believed that Obama was born outside of the country.",
+                        "retriever_score": 0.6270276308059692,
+                        "similarity_score": 0.5984112620353699,
+                        "nli_scores": {
+                            "contradiction": 0.3245179355144501,
+                            "neutral": 0.9982995390892029,
+                            "entailment": 0.0008201755117624998
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "Water boils at 50 degrees Celsius.",
+            "true_label": "REFUTED",
+            "predicted_label": "REFUTED",
+            "details": {
+                "claim": "Water boils at 50 degrees Celsius.",
+                "evidence": [
+                    {
+                        "title": "Water",
+                        "text": "Water can remain in a liquid state at high temperatures in the deep ocean or underground. For example, temperatures exceed 205 \u00b0C (401 \u00b0F) in Old Faithful, a geyser in Yellowstone National Park. In hydrothermal vents, the temperature can exceed 400 \u00b0C (752 \u00b0F). At sea level, the boiling point of water is 100 \u00b0C (212 \u00b0F).",
+                        "retriever_score": 0.5490145683288574,
+                        "similarity_score": 0.5591896772384644,
+                        "nli_scores": {
+                            "contradiction": 0.748725175857544,
+                            "neutral": 0.9073700308799744,
+                            "entailment": 0.005821329075843096
+                        }
+                    },
+                    {
+                        "title": "Water",
+                        "text": "Solutes such as salts and sugars found in water affect the physical properties of water. The boiling and freezing points of water are affected by solutes, as well as air pressure, which is in turn affected by altitude. Water boils at lower temperatures with the lower air pressure that occurs at higher elevations. One mole of sucrose (sugar) per kilogram of water raises the boiling point of water by 0.51 \u00b0C (0.918 \u00b0F), and one mole of salt per kg raises the boiling point by 1.02 \u00b0C (1.836 \u00b0F); similarly, increasing the number of dissolved particles lowers water's freezing point.",
+                        "retriever_score": 0.5071268677711487,
+                        "similarity_score": 0.49990615248680115,
+                        "nli_scores": {
+                            "contradiction": 0.034777674823999405,
+                            "neutral": 0.9979621171951294,
+                            "entailment": 0.02555166557431221
+                        }
+                    },
+                    {
+                        "title": "Water",
+                        "text": "In a vacuum, water will boil at room temperature. ==== Triple and critical points ==== On a pressure/temperature phase diagram (see figure), there are curves separating solid from vapor, vapor from liquid, and liquid from solid. These meet at a single point called the triple point, where all three phases can coexist. The triple point is at a temperature of 273.16 K (0.01 \u00b0C; 32.02 \u00b0F) and a pressure of 611.657 pascals (0.00604 atm; 0.0887 psi); it is the lowest pressure at which liquid water can exist.",
+                        "retriever_score": 0.5031688213348389,
+                        "similarity_score": 0.5293397307395935,
+                        "nli_scores": {
+                            "contradiction": 0.8700125813484192,
+                            "neutral": 0.8875505924224854,
+                            "entailment": 0.10951881855726242
+                        }
+                    },
+                    {
+                        "title": "Water",
+                        "text": "As atmospheric pressure decreases with altitude, the boiling point decreases by 1 \u00b0C every 274 meters. High-altitude cooking takes longer than sea-level cooking. For example, at 1,524 metres (5,000 ft), cooking time must be increased by a fourth to achieve the desired result. Conversely, a pressure cooker can be used to decrease cooking times by raising the boiling temperature.",
+                        "retriever_score": 0.48618191480636597,
+                        "similarity_score": 0.45319896936416626,
+                        "nli_scores": {
+                            "contradiction": 0.2500164806842804,
+                            "neutral": 0.993381142616272,
+                            "entailment": 0.02263648994266987
+                        }
+                    },
+                    {
+                        "title": "Water",
+                        "text": "This is the reason why the melting and boiling points of water are much higher than those of other analogous compounds like hydrogen sulfide. They also explain its exceptionally high specific heat capacity (about 4.2 J/(g\u00b7K)), heat of fusion (about 333 J/g), heat of vaporization (2257 J/g), and thermal conductivity (between 0.561 and 0.679 W/(m\u00b7K)). These properties make water more effective at moderating Earth's climate, by storing heat and transporting it between the oceans and the atmosphere. The hydrogen bonds of water are around 23 kJ/mol (compared to a covalent O\u2013H bond at 492 kJ/mol).",
+                        "retriever_score": 0.48044583201408386,
+                        "similarity_score": 0.49859219789505005,
+                        "nli_scores": {
+                            "contradiction": 0.003803022438660264,
+                            "neutral": 0.9986205101013184,
+                            "entailment": 0.002127293264493346
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": -0.14719391958788036,
+                    "best_entailment": 0.005821329075843096,
+                    "best_contradiction": 0.748725175857544,
+                    "label": "REFUTED",
+                    "hallucinated": true,
+                    "best_evidence": {
+                        "title": "Water",
+                        "text": "Water can remain in a liquid state at high temperatures in the deep ocean or underground. For example, temperatures exceed 205 \u00b0C (401 \u00b0F) in Old Faithful, a geyser in Yellowstone National Park. In hydrothermal vents, the temperature can exceed 400 \u00b0C (752 \u00b0F). At sea level, the boiling point of water is 100 \u00b0C (212 \u00b0F).",
+                        "retriever_score": 0.5490145683288574,
+                        "similarity_score": 0.5591896772384644,
+                        "nli_scores": {
+                            "contradiction": 0.748725175857544,
+                            "neutral": 0.9073700308799744,
+                            "entailment": 0.005821329075843096
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "The Sun revolves around the Earth.",
+            "true_label": "REFUTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "The Sun revolves around the Earth.",
+                "evidence": [
+                    {
+                        "title": "Earth's orbit",
+                        "text": "As seen from Earth, the planet's orbital prograde motion makes the Sun appear to move with respect to other stars at a rate of about 1\u00b0 eastward per solar day (or a Sun or Moon diameter every 12 hours). Earth's orbital speed averages 29.78 km/s (18.50 mi/s; 107,208.00 km/h; 66,615.96 mph), which is fast enough to cover the planet's diameter in 7 minutes and the distance to the Moon in 4 hours. The point towards which the Earth in its solar orbit is directed at any given instant is known as the \"apex of the Earth's way\". From a vantage point above the north pole of either the Sun or Earth, Earth would appear to revolve in a counterclockwise direction around the Sun.",
+                        "retriever_score": 0.6804266571998596,
+                        "similarity_score": 0.6699596643447876,
+                        "nli_scores": {
+                            "contradiction": 0.05043753981590271,
+                            "neutral": 0.9924702644348145,
+                            "entailment": 0.21217601001262665
+                        }
+                    },
+                    {
+                        "title": "Earth's orbit",
+                        "text": "From the same vantage point, both the Earth and the Sun would appear to rotate also in a counterclockwise direction. == History of study == Heliocentrism is the scientific model that first placed the Sun at the center of the Solar System and put the planets, including Earth, in its orbit. Historically, heliocentrism is opposed to geocentrism, which placed the Earth at the center. Aristarchus of Samos already proposed a heliocentric model in the third century BC.",
+                        "retriever_score": 0.6471759676933289,
+                        "similarity_score": 0.6406682729721069,
+                        "nli_scores": {
+                            "contradiction": 0.023199906572699547,
+                            "neutral": 0.9980483055114746,
+                            "entailment": 0.001987893134355545
+                        }
+                    },
+                    {
+                        "title": "Earth's orbit",
+                        "text": "For an observer at a northern latitude, when the north pole is tilted toward the Sun the day lasts longer and the Sun appears higher in the sky. This results in warmer average temperatures, as additional solar radiation reaches the surface. When the north pole is tilted away from the Sun, the reverse is true and the weather is generally cooler. North of the Arctic Circle and south of the Antarctic Circle, an extreme case is reached in which there is no daylight at all for part of the year, and continuous daylight during the opposite time of year.",
+                        "retriever_score": 0.6102498173713684,
+                        "similarity_score": 0.542181670665741,
+                        "nli_scores": {
+                            "contradiction": 0.08536764979362488,
+                            "neutral": 0.9988986253738403,
+                            "entailment": 0.022262590005993843
+                        }
+                    },
+                    {
+                        "title": "Earth's orbit",
+                        "text": "Earth orbits the Sun at an average distance of 149.60 million km (92.96 million mi), or 8.317 light-minutes, in a counterclockwise direction as viewed from above the Northern Hemisphere. One complete orbit takes 365.256 days (1 sidereal year), during which time Earth has traveled 940 million km (584 million mi). Ignoring the influence of other Solar System bodies, Earth's orbit, also called Earth's revolution, is an ellipse with the Earth\u2013Sun barycenter as one focus with a current eccentricity of 0.0167. Since this value is close to zero, the center of the orbit is relatively close to the center of the Sun (relative to the size of the orbit).",
+                        "retriever_score": 0.5937967896461487,
+                        "similarity_score": 0.6134153604507446,
+                        "nli_scores": {
+                            "contradiction": 0.04703311249613762,
+                            "neutral": 0.994335949420929,
+                            "entailment": 0.03512686491012573
+                        }
+                    },
+                    {
+                        "title": "Southern Hemisphere",
+                        "text": "Sun-cast shadows turn anticlockwise throughout the day and sundials have the hours increasing in the anticlockwise direction. During solar eclipses viewed from a point to the south of the Tropic of Capricorn, the Moon moves from left to right on the disc of the Sun (see, for example, photos with timings of the solar eclipse of November 13, 2012), while viewed from a point to the north of the Tropic of Cancer (i.e., in the Northern Hemisphere), the Moon moves from right to left during solar eclipses. The Coriolis effect causes cyclones and tropical storms to spin clockwise in the Southern Hemisphere, as opposed to anticlockwise in the Northern Hemisphere. The southern temperate zone, a subsection of the Southern Hemisphere, is nearly all oceanic.",
+                        "retriever_score": 0.5755397081375122,
+                        "similarity_score": 0.581989049911499,
+                        "nli_scores": {
+                            "contradiction": 0.17230448126792908,
+                            "neutral": 0.9832031726837158,
+                            "entailment": 0.09818045794963837
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.37007070183753965,
+                    "best_entailment": 0.21217601001262665,
+                    "best_contradiction": 0.05043753981590271,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Earth's orbit",
+                        "text": "As seen from Earth, the planet's orbital prograde motion makes the Sun appear to move with respect to other stars at a rate of about 1\u00b0 eastward per solar day (or a Sun or Moon diameter every 12 hours). Earth's orbital speed averages 29.78 km/s (18.50 mi/s; 107,208.00 km/h; 66,615.96 mph), which is fast enough to cover the planet's diameter in 7 minutes and the distance to the Moon in 4 hours. The point towards which the Earth in its solar orbit is directed at any given instant is known as the \"apex of the Earth's way\". From a vantage point above the north pole of either the Sun or Earth, Earth would appear to revolve in a counterclockwise direction around the Sun.",
+                        "retriever_score": 0.6804266571998596,
+                        "similarity_score": 0.6699596643447876,
+                        "nli_scores": {
+                            "contradiction": 0.05043753981590271,
+                            "neutral": 0.9924702644348145,
+                            "entailment": 0.21217601001262665
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "Python is only a snake species.",
+            "true_label": "REFUTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "Python is only a snake species.",
+                "evidence": [
+                    {
+                        "title": "Darwin, Northern Territory",
+                        "text": "Darwin is also home to many species of frogs and reptiles. There are more species of snake in Darwin than any other Australian capital city, with 34 non-marine snake species found in the region, of which 23 have been recorded by professional snake catchers in Darwin itself. Fortunately for the citizens of Darwin, a far smaller proportion of these snakes are highly venomous than is typically found in other cities, due to the low numbers of front-fanged elapid species and dominance of relatively harmless pythons and colubrid species. Of the 23 more regularly encountered snake species in Darwin, it seems that species with broader habitat and dietary preferences, as well as a penchant for arboreality, are associated with more frequent human\u2013snake interactions.",
+                        "retriever_score": 0.5968950986862183,
+                        "similarity_score": 0.6023129224777222,
+                        "nli_scores": {
+                            "contradiction": 0.04105852544307709,
+                            "neutral": 0.9944130778312683,
+                            "entailment": 0.0021726235281676054
+                        }
+                    },
+                    {
+                        "title": "Desert",
+                        "text": "Lizards and snakes are the most numerous in arid regions and certain snakes have developed a novel method of locomotion that enables them to move sidewards and navigate high sand-dunes. These include the horned viper of Africa and the sidewinder of North America, evolutionarily distinct but with similar behavioural patterns because of convergent evolution. Many desert reptiles are ambush predators and often bury themselves in the sand, waiting for prey to come within range. Amphibians might seem unlikely desert-dwellers, because of their need to keep their skins moist and their dependence on water for reproductive purposes.",
+                        "retriever_score": 0.5027024149894714,
+                        "similarity_score": 0.4821687638759613,
+                        "nli_scores": {
+                            "contradiction": 0.35397717356681824,
+                            "neutral": 0.9659993648529053,
+                            "entailment": 0.04807974398136139
+                        }
+                    },
+                    {
+                        "title": "Somalia",
+                        "text": "Of these, almost half live in the northern areas. Reptiles endemic to Somalia include the Hughes' saw-scaled viper, the Southern Somali garter snake, a racer (Platyceps messanai), a diadem snake (Spalerosophis josephscorteccii), the Somali sand boa, the angled worm lizard, a spiny-tailed lizard (Uromastyx macfadyeni), Lanza's agama, a gecko (Hemidactylus granchii), the Somali semaphore gecko, and a sand lizard (Mesalina or Eremias). A colubrid snake (Aprosdoketophis andreonei) and Haacke-Greer's skink (Haackgreerius miopus) are endemic species. == Government and politics == Somalia is a parliamentary representative democratic republic.",
+                        "retriever_score": 0.4994504153728485,
+                        "similarity_score": 0.4918777346611023,
+                        "nli_scores": {
+                            "contradiction": 0.7411527037620544,
+                            "neutral": 0.9991587400436401,
+                            "entailment": 0.008019968867301941
+                        }
+                    },
+                    {
+                        "title": "Heart",
+                        "text": "Therefore, snakes that are larger in size tend to have a higher blood pressure due to gravitational change. The ventricle is incompletely separated into two-halves by a wall (septum), with a considerable gap near the pulmonary artery and aortic openings. In most reptilian species, there appears to be little, if any, mixing between the bloodstreams, so the aorta receives, essentially, only oxygenated blood. The exception to this rule is crocodiles, which have a four-chambered heart.",
+                        "retriever_score": 0.4980214834213257,
+                        "similarity_score": 0.4737556278705597,
+                        "nli_scores": {
+                            "contradiction": 0.04714090749621391,
+                            "neutral": 0.9979124665260315,
+                            "entailment": 0.05780435726046562
+                        }
+                    },
+                    {
+                        "title": "Piney Woods",
+                        "text": "Five venomous snakes occur in the region, the Texas coralsnake (Micrurus tener), eastern copperhead (Agkistrodon contortrix), northern cottonmouth (Agkistrodon piscivorus), timber rattlesnake (Crotalus horridus), and pygmy rattlesnake (Sistrurus miliarius). Some of the non-venomous snakes include the rough greensnake (Opheodrys aestivus), Dekay's brownsnake (Storeria dekayi), eastern hog-nosed snake (Heterodon platirhinos), western ribbonsnake (Thamnophis proximus), glossy swampsnake (Liodytes rigida), southern watersnake (Nerodia fasciata), diamond-back watersnake (Nerodia rhombifer), red-bellied mudsnake (Farancia abacura), North American racer (Coluber constrictor), coachwhip (Masticophis flagellum), scarletsnake (Cemophora coccinea), prairie kingsnake (Lampropeltis calligaster), speckled kingsnake (Lampropeltis holbrooki), western ratsnake (Pantherophis obsoletus). and at least a dozen others. Amphibians: Over a dozen species of salamanders occur in the Piney Woods.",
+                        "retriever_score": 0.482967346906662,
+                        "similarity_score": 0.46314412355422974,
+                        "nli_scores": {
+                            "contradiction": 0.6805192828178406,
+                            "neutral": 0.9586778879165649,
+                            "entailment": 0.009465398266911507
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.2216994803864509,
+                    "best_entailment": 0.0021726235281676054,
+                    "best_contradiction": 0.04105852544307709,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Darwin, Northern Territory",
+                        "text": "Darwin is also home to many species of frogs and reptiles. There are more species of snake in Darwin than any other Australian capital city, with 34 non-marine snake species found in the region, of which 23 have been recorded by professional snake catchers in Darwin itself. Fortunately for the citizens of Darwin, a far smaller proportion of these snakes are highly venomous than is typically found in other cities, due to the low numbers of front-fanged elapid species and dominance of relatively harmless pythons and colubrid species. Of the 23 more regularly encountered snake species in Darwin, it seems that species with broader habitat and dietary preferences, as well as a penchant for arboreality, are associated with more frequent human\u2013snake interactions.",
+                        "retriever_score": 0.5968950986862183,
+                        "similarity_score": 0.6023129224777222,
+                        "nli_scores": {
+                            "contradiction": 0.04105852544307709,
+                            "neutral": 0.9944130778312683,
+                            "entailment": 0.0021726235281676054
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "The capital of France is Rome.",
+            "true_label": "REFUTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "The capital of France is Rome.",
+                "evidence": [
+                    {
+                        "title": "Rome",
+                        "text": "Rome is the capital city and most populated comune (municipality) of Italy. It is also the administrative centre of the Lazio region and of the Metropolitan City of Rome. A special comune named Roma Capitale with a population of 2.7 million in an area of 1,287.36 km2 (497.1 mi2), Rome is the third most populous city in the European Union by population within city limits. The Metropolitan City of Rome Capital, with a population of 4.2 million, is the most populous metropolitan city in Italy.",
+                        "retriever_score": 0.6382666826248169,
+                        "similarity_score": 0.6295756101608276,
+                        "nli_scores": {
+                            "contradiction": 0.9917457699775696,
+                            "neutral": 0.9899380207061768,
+                            "entailment": 0.0036502284929156303
+                        }
+                    },
+                    {
+                        "title": "Paris",
+                        "text": "=== Twin towns \u2013 sister cities === Since April 1956, Paris is exclusively and reciprocally twinned with: Rome, Italy Seule Paris est digne de Rome; seule Rome est digne de Paris. (in French) Solo Parigi \u00e8 degna di Roma; solo Roma \u00e8 degna di Parigi. (in Italian) \"Only Paris is worthy of Rome; only Rome is worthy of Paris.\" === Other relationships === Paris has agreements of friendship and co-operation with: == See also == Art Nouveau in Paris Art Deco in Paris C40 Cities Climate Leadership Group International Exposition of Modern Industrial and Decorative Arts held in Paris in 1925 Megacity Outline of France Outline of Paris Paris syndrome Parish and Civil Registers in Paris == Notes == == References == === Citations === === Sources === == Further reading == == External links == Official website (in French)",
+                        "retriever_score": 0.6067361235618591,
+                        "similarity_score": 0.6062195897102356,
+                        "nli_scores": {
+                            "contradiction": 0.9859748482704163,
+                            "neutral": 0.9340755343437195,
+                            "entailment": 0.060128409415483475
+                        }
+                    },
+                    {
+                        "title": "Rome",
+                        "text": "== Government == Rome constitutes a comune speciale, named \"Roma Capitale\", and is the largest both in terms of land area and population among the 8,101 comuni of Italy. It is governed by a mayor and a city council. The seat of the comune is the Palazzo Senatorio on the Capitoline Hill, the historic seat of the city government. The local administration in Rome is commonly referred to as \"Campidoglio\", the Italian name of the hill.",
+                        "retriever_score": 0.6047292947769165,
+                        "similarity_score": 0.5843565464019775,
+                        "nli_scores": {
+                            "contradiction": 0.9901183247566223,
+                            "neutral": 0.9959149956703186,
+                            "entailment": 0.006996356416493654
+                        }
+                    },
+                    {
+                        "title": "Rome",
+                        "text": "Rome is the national capital of Italy and is the seat of the Italian Government. The official residences of the President of the Italian Republic and the Italian Prime Minister, the seats of both houses of the Italian Parliament and that of the Italian Constitutional Court are located in the historic centre. The state ministries are spread out around the city; these include the Ministry of Foreign Affairs, which is located in Palazzo della Farnesina near the Olympic stadium. === International relations === Among the global cities, Rome is unique in having two sovereign entities located entirely within its city limits, the Holy See, represented by the Vatican City State, and the territorially smaller Sovereign Military Order of Malta.",
+                        "retriever_score": 0.59630286693573,
+                        "similarity_score": 0.5792113542556763,
+                        "nli_scores": {
+                            "contradiction": 0.9926474094390869,
+                            "neutral": 0.9993909597396851,
+                            "entailment": 0.0033735367469489574
+                        }
+                    },
+                    {
+                        "title": "Capital city",
+                        "text": "'Rome head of the world') was already used by the poet Ovid in the 1st century BC. It originates out of a classical European understanding of the known world: Europe, North Africa, and Southwest Asia. The phrase is related to the enduring power of the city first as the capital of the Republic and the Empire, and later as the centre of the Catholic Church. In several English-speaking states, the terms county town and county seat are also used in lower administrative divisions.",
+                        "retriever_score": 0.5925387740135193,
+                        "similarity_score": 0.5283541679382324,
+                        "nli_scores": {
+                            "contradiction": 0.06713635474443436,
+                            "neutral": 0.9925084710121155,
+                            "entailment": 0.02477862872183323
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.19264066703617574,
+                    "best_entailment": 0.02477862872183323,
+                    "best_contradiction": 0.06713635474443436,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Capital city",
+                        "text": "'Rome head of the world') was already used by the poet Ovid in the 1st century BC. It originates out of a classical European understanding of the known world: Europe, North Africa, and Southwest Asia. The phrase is related to the enduring power of the city first as the capital of the Republic and the Empire, and later as the centre of the Catholic Church. In several English-speaking states, the terms county town and county seat are also used in lower administrative divisions.",
+                        "retriever_score": 0.5925387740135193,
+                        "similarity_score": 0.5283541679382324,
+                        "nli_scores": {
+                            "contradiction": 0.06713635474443436,
+                            "neutral": 0.9925084710121155,
+                            "entailment": 0.02477862872183323
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "Humans can breathe in space without assistance.",
+            "true_label": "REFUTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "Humans can breathe in space without assistance.",
+                "evidence": [
+                    {
+                        "title": "Cetacean",
+                        "text": "Whales are deliberate breathers: they must be awake to inhale and exhale. When stale air, warmed from the lungs, is exhaled, it condenses as it meets colder external air. As with a terrestrial mammal breathing out on a cold day, a small cloud of 'steam' appears. This is called the 'spout' and varies across species in shape, angle and height.",
+                        "retriever_score": 0.4305710196495056,
+                        "similarity_score": 0.3971039354801178,
+                        "nli_scores": {
+                            "contradiction": 0.9672110676765442,
+                            "neutral": 0.9970711469650269,
+                            "entailment": 0.07119622826576233
+                        }
+                    },
+                    {
+                        "title": "Astronaut",
+                        "text": "U.S. astronauts who also have active-duty military status receive a special qualification badge, known as the Astronaut Badge, after participation on a spaceflight. The United States Air Force also presents an Astronaut Badge to its pilots who exceed 50 miles (80 km) in altitude. == Deaths == As of 2020, eighteen astronauts (fourteen men and four women) have died during four space flights. By nationality, thirteen were American, four were Russian (Soviet Union), and one was Israeli.",
+                        "retriever_score": 0.4215056896209717,
+                        "similarity_score": 0.4156271517276764,
+                        "nli_scores": {
+                            "contradiction": 0.13025914132595062,
+                            "neutral": 0.9980661273002625,
+                            "entailment": 0.06046336144208908
+                        }
+                    },
+                    {
+                        "title": "International Space Station",
+                        "text": "Some simple forms of life called extremophiles, as well as small invertebrates called tardigrades, can survive in this environment in an extremely dry state through desiccation. Medical research improves knowledge about the effects of long-term space exposure on the human body, including muscle atrophy, bone loss, and fluid shift. These data will be used to determine whether high duration human spaceflight and space colonisation are feasible. In 2006, data on bone loss and muscular atrophy suggested that there would be a significant risk of fractures and movement problems if astronauts landed on a planet after a lengthy interplanetary cruise, such as the six-month interval required to travel to Mars.",
+                        "retriever_score": 0.4141397774219513,
+                        "similarity_score": 0.4081920385360718,
+                        "nli_scores": {
+                            "contradiction": 0.0928344875574112,
+                            "neutral": 0.9992150068283081,
+                            "entailment": 0.004863190930336714
+                        }
+                    },
+                    {
+                        "title": "International Space Station",
+                        "text": "They may also have difficulty measuring distances. This can cause problems like getting lost inside the space station, pulling switches in the wrong direction or misjudging the speed of an approaching vehicle during docking. ==== Medical ==== The physiological effects of long-term weightlessness include muscle atrophy, deterioration of the skeleton (osteopenia), fluid redistribution, a slowing of the cardiovascular system, decreased production of red blood cells, balance disorders, and a weakening of the immune system. Lesser symptoms include loss of body mass, and puffiness of the face.",
+                        "retriever_score": 0.3947620987892151,
+                        "similarity_score": 0.4208289384841919,
+                        "nli_scores": {
+                            "contradiction": 0.19318346679210663,
+                            "neutral": 0.9991928935050964,
+                            "entailment": 0.0025900087784975767
+                        }
+                    },
+                    {
+                        "title": "Astronaut",
+                        "text": "Astronauts who took longer space trips were associated with greater brain changes. Being in space can be physiologically deconditioning on the body. It can affect the otolith organs and adaptive capabilities of the central nervous system. Zero gravity and cosmic rays can cause many implications for astronauts.",
+                        "retriever_score": 0.39415791630744934,
+                        "similarity_score": 0.427275151014328,
+                        "nli_scores": {
+                            "contradiction": 0.10912761092185974,
+                            "neutral": 0.992716372013092,
+                            "entailment": 0.004999671131372452
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.0,
+                    "best_entailment": 0.0,
+                    "best_contradiction": 0.0,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": null
+                }
+            }
+        },
+        {
+            "claim": "The Eiffel Tower is one of the most visited monuments in the world.",
+            "true_label": "SUPPORTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "The Eiffel Tower is one of the most visited monuments in the world.",
+                "evidence": [
+                    {
+                        "title": "Washington Monument",
+                        "text": "It is the third tallest monumental column in the world, trailing only the Juche Tower in Pyongyang, and the San Jacinto Monument in Houston, Texas. It was the world's tallest structure between 1884 and 1889, after which it was overtaken by the Eiffel Tower, in Paris. Construction of the presidential memorial began in 1848. The construction was suspended from 1854 to 1877 due to funding challenges, a struggle for control over the Washington National Monument Society, and the American Civil War.",
+                        "retriever_score": 0.5822947025299072,
+                        "similarity_score": 0.5746973752975464,
+                        "nli_scores": {
+                            "contradiction": 0.1273728907108307,
+                            "neutral": 0.9966377019882202,
+                            "entailment": 0.0007082413649186492
+                        }
+                    },
+                    {
+                        "title": "Paris",
+                        "text": "=== Museums === The Louvre received 2.8 million visitors in 2021, holding its position as the world's most-visited museum. Its treasures include the Mona Lisa, the Venus de Milo statue, and Liberty Leading the People. The second-most visited museum, with 1.5 million visitors in 2021, was the Centre Georges Pompidou, also known as Beaubourg, which houses the Mus\u00e9e National d'Art Moderne The National Museum of Natural History followed with 1.4 million visitors. It is famous for its dinosaur artefacts, mineral collections, and its Gallery of Evolution.",
+                        "retriever_score": 0.5618125796318054,
+                        "similarity_score": 0.5486007332801819,
+                        "nli_scores": {
+                            "contradiction": 0.9849062561988831,
+                            "neutral": 0.9989250302314758,
+                            "entailment": 0.0009990667458623648
+                        }
+                    },
+                    {
+                        "title": "Wembley Stadium",
+                        "text": "For the new stadium the level of the pitch was lowered. During excavation of the new playing field, mechanical diggers unearthed a buried obstruction: the concrete foundations of Watkin's Tower, a failed attempt to construct a rival to the Eiffel Tower in London. Only the base of the tower was ever built before being abandoned and demolished in 1907; the site was later used as the location for the first Wembley Stadium. === Handover and opening === The new stadium was completed and handed over to the FA on 9 March 2007.",
+                        "retriever_score": 0.5109152793884277,
+                        "similarity_score": 0.5008416771888733,
+                        "nli_scores": {
+                            "contradiction": 0.9994307160377502,
+                            "neutral": 0.9494003057479858,
+                            "entailment": 0.012171920388936996
+                        }
+                    },
+                    {
+                        "title": "Paris",
+                        "text": "Paris's top cultural attractions in 2022 were the Louvre Museum (7.7 million visitors), the Eiffel Tower (5.8 million visitors), the Mus\u00e9e d'Orsay (3.27 million visitors) and the Centre Pompidou (3 million visitors). In 2019, Greater Paris had 2,056 hotels, including 94 five-star hotels, with a total of 121,646 rooms. In 2019, in addition to the hotels, Greater Paris had 60,000 homes registered with Airbnb. Under French law, renters of these units must pay the Paris tourism tax.",
+                        "retriever_score": 0.5085622668266296,
+                        "similarity_score": 0.5053767561912537,
+                        "nli_scores": {
+                            "contradiction": 0.0022363392636179924,
+                            "neutral": 0.9989651441574097,
+                            "entailment": 0.0005164923495613039
+                        }
+                    },
+                    {
+                        "title": "Washington Monument",
+                        "text": "=== Later history === The Washington Monument was the world's tallest structure until the Eiffel Tower in Paris was completed in 1889. This monument is taller than the obelisks around the capitals of Europe and in Egypt and Ethiopia, but ordinary antique obelisks were quarried as a monolithic block of stone, and were therefore seldom taller than approximately 100 feet (30 m). The district's Heights of Buildings Act of 1910 restricts new building heights to no more than 20 feet (6.1 m) greater than the width of the adjacent street; as such, none of Washington, D.C.'s tallest buildings are higher than the Washington Monument. ==== 20th century ==== In the early 1900s, material started oozing out between the outer stones of the first construction period below the 150-foot (46 m) mark, and was referred to by tourists as \"geological tuberculosis\".",
+                        "retriever_score": 0.48759955167770386,
+                        "similarity_score": 0.46647799015045166,
+                        "nli_scores": {
+                            "contradiction": 0.6870789527893066,
+                            "neutral": 0.998386025428772,
+                            "entailment": 0.0008114299271255732
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.20134242825442925,
+                    "best_entailment": 0.0005164923495613039,
+                    "best_contradiction": 0.0022363392636179924,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Paris",
+                        "text": "Paris's top cultural attractions in 2022 were the Louvre Museum (7.7 million visitors), the Eiffel Tower (5.8 million visitors), the Mus\u00e9e d'Orsay (3.27 million visitors) and the Centre Pompidou (3 million visitors). In 2019, Greater Paris had 2,056 hotels, including 94 five-star hotels, with a total of 121,646 rooms. In 2019, in addition to the hotels, Greater Paris had 60,000 homes registered with Airbnb. Under French law, renters of these units must pay the Paris tourism tax.",
+                        "retriever_score": 0.5085622668266296,
+                        "similarity_score": 0.5053767561912537,
+                        "nli_scores": {
+                            "contradiction": 0.0022363392636179924,
+                            "neutral": 0.9989651441574097,
+                            "entailment": 0.0005164923495613039
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "Albert Einstein failed mathematics in school.",
+            "true_label": "REFUTED",
+            "predicted_label": "REFUTED",
+            "details": {
+                "claim": "Albert Einstein failed mathematics in school.",
+                "evidence": [
+                    {
+                        "title": "Albert Einstein",
+                        "text": "Einstein excelled at physics and mathematics from an early age, and soon acquired the mathematical expertise normally only found in a child several years his senior. He began teaching himself algebra, calculus and Euclidean geometry when he was twelve; he made such rapid progress that he discovered an original proof of the Pythagorean theorem before his thirteenth birthday. A family tutor, Max Talmud, said that only a short time after he had given the twelve year old Einstein a geometry textbook, the boy \"had worked through the whole book. He thereupon devoted himself to higher mathematics ...",
+                        "retriever_score": 0.6486612558364868,
+                        "similarity_score": 0.6144562363624573,
+                        "nli_scores": {
+                            "contradiction": 0.9998997449874878,
+                            "neutral": 0.9984232187271118,
+                            "entailment": 0.0003003563324455172
+                        }
+                    },
+                    {
+                        "title": "Albert Einstein",
+                        "text": "At seventeen, he enrolled in the four-year mathematics and physics teaching diploma program at the federal polytechnic school. He befriended fellow student Marcel Grossmann, who would help him there to get by despite his loose study habits, and later to mathematically underpin his revolutionary insights into physics. Marie Winteler, a year older than him, took up a teaching post in Olsberg, Switzerland. The five other polytechnic school freshmen following the same course as Einstein included just one woman, a twenty year old Serbian, Mileva Mari\u0107.",
+                        "retriever_score": 0.6172598600387573,
+                        "similarity_score": 0.5486267805099487,
+                        "nli_scores": {
+                            "contradiction": 0.9661391973495483,
+                            "neutral": 0.9982537627220154,
+                            "entailment": 0.001125816022977233
+                        }
+                    },
+                    {
+                        "title": "Albert Einstein",
+                        "text": "Soon the flight of his mathematical genius was so high I could not follow.\" Einstein recorded that he had \"mastered integral and differential calculus\" while still just fourteen. His love of algebra and geometry was so great that at twelve, he was already confident that nature could be understood as a \"mathematical structure\". At thirteen, when his range of enthusiasms had broadened to include music and philosophy, Talmud introduced Einstein to Kant's Critique of Pure Reason.",
+                        "retriever_score": 0.6022383570671082,
+                        "similarity_score": 0.5630993843078613,
+                        "nli_scores": {
+                            "contradiction": 0.9997537732124329,
+                            "neutral": 0.9978100657463074,
+                            "entailment": 0.00040193647146224976
+                        }
+                    },
+                    {
+                        "title": "Albert Einstein",
+                        "text": "Kant became his favorite philosopher; according to Talmud, \"At the time he was still a child, only thirteen years old, yet Kant's works, incomprehensible to ordinary mortals, seemed to be clear to him.\" In 1895, at the age of sixteen, Einstein sat the entrance examination for the federal polytechnic school (later the Eidgen\u00f6ssische Technische Hochschule, ETH) in Zurich, Switzerland. He failed to reach the required standard in the general part of the test, but performed with distinction in physics and mathematics. On the advice of the polytechnic's principal, he completed his secondary education at the Argovian cantonal school (a gymnasium) in Aarau, Switzerland, graduating in 1896.",
+                        "retriever_score": 0.5733611583709717,
+                        "similarity_score": 0.555069088935852,
+                        "nli_scores": {
+                            "contradiction": 0.5381585955619812,
+                            "neutral": 0.9964279532432556,
+                            "entailment": 0.0008717628079466522
+                        }
+                    },
+                    {
+                        "title": "Albert Einstein",
+                        "text": "With physicist Satyendra Nath Bose, he laid the groundwork for Bose\u2013Einstein statistics. For much of the last phase of his academic life, Einstein worked on two endeavors that ultimately proved unsuccessful. First, he advocated against quantum theory's introduction of fundamental randomness into science's picture of the world, objecting that \"God does not play dice\". Second, he attempted to devise a unified field theory by generalizing his geometric theory of gravitation to include electromagnetism.",
+                        "retriever_score": 0.5716599822044373,
+                        "similarity_score": 0.5270737409591675,
+                        "nli_scores": {
+                            "contradiction": 0.6860737800598145,
+                            "neutral": 0.9961698651313782,
+                            "entailment": 0.0035074155312031507
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": -0.04652860452188179,
+                    "best_entailment": 0.0008717628079466522,
+                    "best_contradiction": 0.5381585955619812,
+                    "label": "REFUTED",
+                    "hallucinated": true,
+                    "best_evidence": {
+                        "title": "Albert Einstein",
+                        "text": "Kant became his favorite philosopher; according to Talmud, \"At the time he was still a child, only thirteen years old, yet Kant's works, incomprehensible to ordinary mortals, seemed to be clear to him.\" In 1895, at the age of sixteen, Einstein sat the entrance examination for the federal polytechnic school (later the Eidgen\u00f6ssische Technische Hochschule, ETH) in Zurich, Switzerland. He failed to reach the required standard in the general part of the test, but performed with distinction in physics and mathematics. On the advice of the polytechnic's principal, he completed his secondary education at the Argovian cantonal school (a gymnasium) in Aarau, Switzerland, graduating in 1896.",
+                        "retriever_score": 0.5733611583709717,
+                        "similarity_score": 0.555069088935852,
+                        "nli_scores": {
+                            "contradiction": 0.5381585955619812,
+                            "neutral": 0.9964279532432556,
+                            "entailment": 0.0008717628079466522
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "Shakespeare wrote many famous plays.",
+            "true_label": "SUPPORTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "Shakespeare wrote many famous plays.",
+                "evidence": [
+                    {
+                        "title": "Shakespeare's plays",
+                        "text": "Shakespeare's plays are a canon of approximately 39 dramatic works written by the English playwright and poet William Shakespeare. The exact number of plays as well as their classifications as tragedy, history, comedy, or otherwise is a matter of scholarly debate. Shakespeare's plays are widely regarded as among the greatest in the English language and are continually performed around the world. The plays have been translated into every major living language.",
+                        "retriever_score": 0.7761088609695435,
+                        "similarity_score": 0.7835121154785156,
+                        "nli_scores": {
+                            "contradiction": 0.0003293206973467022,
+                            "neutral": 0.9994093179702759,
+                            "entailment": 0.004293747246265411
+                        }
+                    },
+                    {
+                        "title": "Shakespeare's plays",
+                        "text": "Henry VI, Part 1 \u2013 Some scholars argue that Shakespeare wrote less than 20% of the text. Henry VIII \u2013 Generally considered a collaboration between Shakespeare and Fletcher. Macbeth \u2013 Thomas Middleton may have revised this tragedy in 1615 to incorporate extra musical sequences. Measure for Measure \u2013 May have undergone a light revision by Middleton.",
+                        "retriever_score": 0.7145756483078003,
+                        "similarity_score": 0.6382691860198975,
+                        "nli_scores": {
+                            "contradiction": 0.004992155823856592,
+                            "neutral": 0.9980462789535522,
+                            "entailment": 0.0016724498709663749
+                        }
+                    },
+                    {
+                        "title": "Shakespeare's plays",
+                        "text": "The Spanish Tragedy \u2013 Additional passages included in the fourth quarto, including the \"painter scene\", are likely to have been written by him. == Performance history == During Shakespeare's lifetime, many of his greatest plays were staged at the Globe Theatre and the Blackfriars Theatre. Shakespeare's fellow members of the Lord Chamberlain's Men acted in his plays. Among these actors were Richard Burbage (who played the title role in the first performances of many of Shakespeare's plays, including Hamlet, Othello, Richard III and King Lear), Richard Cowley (who played Verges in Much Ado About Nothing), William Kempe, (who played Peter in Romeo and Juliet and, possibly, Bottom in A Midsummer Night's Dream) and Henry Condell and John Heminges, who are most famous now for collecting and editing the plays of Shakespeare's First Folio (1623).",
+                        "retriever_score": 0.7024582624435425,
+                        "similarity_score": 0.6763519048690796,
+                        "nli_scores": {
+                            "contradiction": 0.005847780499607325,
+                            "neutral": 0.9992501139640808,
+                            "entailment": 0.003329837927594781
+                        }
+                    },
+                    {
+                        "title": "Theatre of the United Kingdom",
+                        "text": "== Renaissance theatre: 1500\u20131660 == The reign of Elizabeth I in the late 16th and early 17th century saw a flowering of the drama and all the arts. Perhaps the most famous playwright in the world, William Shakespeare, wrote around 40 plays that are still performed in theatres across the world to this day. They include tragedies, such as Hamlet (1603), Othello (1604), and King Lear (1605); comedies, such as A Midsummer Night's Dream (1594\u201396) and Twelfth Night (1602); and history plays, such as Henry IV, Part 1. The Elizabethan age is sometimes nicknamed the \"Age of Shakespeare\" for the influence he held over the era.",
+                        "retriever_score": 0.7008705139160156,
+                        "similarity_score": 0.7041968107223511,
+                        "nli_scores": {
+                            "contradiction": 0.0014104200527071953,
+                            "neutral": 0.9995212554931641,
+                            "entailment": 0.010748889297246933
+                        }
+                    },
+                    {
+                        "title": "Shakespeare's plays",
+                        "text": "Saying that addressing the audience was outmoded by the time Shakespeare was alive, he \"acknowledges few occasions when a Shakespearean speech might involve the audience in recognising the simultaneous reality of the stage and the world the stage is representing\". Other than 29 speeches delivered by choruses or characters who revert to that condition as epilogues \"Hirsh recognizes only three instances of audience address in Shakespeare's plays, 'all in very early comedies, in which audience address is introduced specifically to ridicule the practice as antiquated and amateurish.'\" == Source material of the plays == As was common in the period, Shakespeare based many of his plays on the work of other playwrights and recycled older stories and historical material. His dependence on earlier sources was a natural consequence of the speed at which playwrights of his era wrote; in addition, plays based on already popular stories appear to have been seen as more likely to draw large crowds.",
+                        "retriever_score": 0.6913442611694336,
+                        "similarity_score": 0.6758301258087158,
+                        "nli_scores": {
+                            "contradiction": 0.7427816390991211,
+                            "neutral": 0.9968705773353577,
+                            "entailment": 0.004052396398037672
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.3158164341904922,
+                    "best_entailment": 0.004293747246265411,
+                    "best_contradiction": 0.0003293206973467022,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Shakespeare's plays",
+                        "text": "Shakespeare's plays are a canon of approximately 39 dramatic works written by the English playwright and poet William Shakespeare. The exact number of plays as well as their classifications as tragedy, history, comedy, or otherwise is a matter of scholarly debate. Shakespeare's plays are widely regarded as among the greatest in the English language and are continually performed around the world. The plays have been translated into every major living language.",
+                        "retriever_score": 0.7761088609695435,
+                        "similarity_score": 0.7835121154785156,
+                        "nli_scores": {
+                            "contradiction": 0.0003293206973467022,
+                            "neutral": 0.9994093179702759,
+                            "entailment": 0.004293747246265411
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "Mount Everest is the tallest mountain on Earth above sea level.",
+            "true_label": "SUPPORTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "Mount Everest is the tallest mountain on Earth above sea level.",
+                "evidence": [
+                    {
+                        "title": "Mount Everest",
+                        "text": "Mount Everest (known locally as Sagarm\u0101th\u0101 in Nepal and Qomolangma in Tibet) is Earth's highest mountain above sea level. It lies in the Mahalangur Himal sub-range of the Himalayas and marks part of the China\u2013Nepal border at its summit. Its height was most recently measured in 2020 by Chinese and Nepali authorities as 8,848.86 m (29,031 ft 8+1\u20442 in). Mount Everest attracts many climbers, including highly experienced mountaineers.",
+                        "retriever_score": 0.8047055006027222,
+                        "similarity_score": 0.8031152486801147,
+                        "nli_scores": {
+                            "contradiction": 0.02127263881266117,
+                            "neutral": 0.9986114501953125,
+                            "entailment": 0.4095097780227661
+                        }
+                    },
+                    {
+                        "title": "Mount Everest",
+                        "text": "It is thought that the plate tectonics of the Main Himalayan Thrust and related faults, which form the convergent boundary between the Eurasian Plate and Indian Plate, are adding to the height and moving the summit northeastwards. Two accounts suggest the rates of change are 4 mm (0.16 in) per year vertically and 3 to 6 mm (0.12 to 0.24 in) per year horizontally, but another account mentions more lateral movement (27 mm or 1.1 in), and even shrinkage has been suggested. === Comparisons === The summit of Everest is the point at which Earth's surface reaches the greatest distance above sea level. Several other mountains are sometimes claimed to be the \"tallest mountains on Earth\".",
+                        "retriever_score": 0.7037938833236694,
+                        "similarity_score": 0.6545835137367249,
+                        "nli_scores": {
+                            "contradiction": 0.015730757266283035,
+                            "neutral": 0.9989691972732544,
+                            "entailment": 0.664372444152832
+                        }
+                    },
+                    {
+                        "title": "Mount Everest",
+                        "text": "Climbers typically ascend only part of Mount Everest's elevation, as the mountain's full elevation is measured from the geoid, which approximates sea level. The closest sea to Mount Everest's summit is the Bay of Bengal, almost 700 km (430 mi) away. To approximate a climb of the entire height of Mount Everest, one would need to start from this coastline, a feat accomplished by Tim Macartney-Snape's team in 1990. Climbers usually begin their ascent from base camps above 5,000 m (16,404 ft).",
+                        "retriever_score": 0.6756410002708435,
+                        "similarity_score": 0.6501597166061401,
+                        "nli_scores": {
+                            "contradiction": 0.07777823507785797,
+                            "neutral": 0.9972597360610962,
+                            "entailment": 0.007607478182762861
+                        }
+                    },
+                    {
+                        "title": "Mount Everest",
+                        "text": "To avoid the harshest winds, climbers typically aim for a 7- to 10-day window in the spring and fall when the Asian monsoon season is starting up or ending. Mount Everest hosts several weather stations that collect important data on high-altitude weather conditions. Among them is the Balcony Station, the highest weather station on the planet, located at about 8,430 metres (27,660 ft) above sea level. Set up by climate scientists Tom Matthews and Baker Perry in 2019, this station is positioned just below the summit of Everest, which is the highest point on Earth.",
+                        "retriever_score": 0.6737608909606934,
+                        "similarity_score": 0.6230794191360474,
+                        "nli_scores": {
+                            "contradiction": 0.8720289468765259,
+                            "neutral": 0.9995326995849609,
+                            "entailment": 0.0014945954317227006
+                        }
+                    },
+                    {
+                        "title": "Mount Everest",
+                        "text": "Mauna Kea in Hawaii is tallest when measured from its base; it rises over 10,200 m (33,464.6 ft) from its base on the mid-ocean floor, but only attains 4,205 m (13,796 ft) above sea level. By the same measure of base to summit, Denali (also called Mount McKinley) in Alaska is taller than Everest as well. Despite its height above sea level of only 6,190 m (20,308 ft), Denali sits atop a sloping plain with elevations from 300 to 900 m (980 to 2,950 ft), yielding a height above base in the range of 5,300 to 5,900 m (17,400 to 19,400 ft); a commonly quoted figure is 5,600 m (18,400 ft). By comparison, reasonable base elevations for Everest range from 4,200 m (13,800 ft) on the south side to 5,200 m (17,100 ft) on the Tibetan Plateau, yielding a height above base in the range of 3,650 to 4,650 m (11,980 to 15,260 ft).",
+                        "retriever_score": 0.6688158512115479,
+                        "similarity_score": 0.622090220451355,
+                        "nli_scores": {
+                            "contradiction": 0.9725712537765503,
+                            "neutral": 0.9726876616477966,
+                            "entailment": 0.01430608332157135
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.6525914933532477,
+                    "best_entailment": 0.664372444152832,
+                    "best_contradiction": 0.015730757266283035,
+                    "label": "SUPPORTED",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Mount Everest",
+                        "text": "It is thought that the plate tectonics of the Main Himalayan Thrust and related faults, which form the convergent boundary between the Eurasian Plate and Indian Plate, are adding to the height and moving the summit northeastwards. Two accounts suggest the rates of change are 4 mm (0.16 in) per year vertically and 3 to 6 mm (0.12 to 0.24 in) per year horizontally, but another account mentions more lateral movement (27 mm or 1.1 in), and even shrinkage has been suggested. === Comparisons === The summit of Everest is the point at which Earth's surface reaches the greatest distance above sea level. Several other mountains are sometimes claimed to be the \"tallest mountains on Earth\".",
+                        "retriever_score": 0.7037938833236694,
+                        "similarity_score": 0.6545835137367249,
+                        "nli_scores": {
+                            "contradiction": 0.015730757266283035,
+                            "neutral": 0.9989691972732544,
+                            "entailment": 0.664372444152832
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "The Amazon rainforest produces most of the world's oxygen.",
+            "true_label": "REFUTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "The Amazon rainforest produces most of the world's oxygen.",
+                "evidence": [
+                    {
+                        "title": "Amazon rainforest",
+                        "text": "Amazonian evergreen forests account for about 10% of the world's terrestrial primary productivity and 10% of the carbon stores in ecosystems \u2013 of the order of 1.1 \u00d7 1011 metric tonnes of carbon. Amazonian forests are estimated to have accumulated 0.62 \u00b1 0.37 tons of carbon per hectare per year between 1975 and 1996. In 2021 it was reported that the Amazon emitted more greenhouse gases than it absorbed for the first time. Though often referenced as producing more than a quarter of the Earth's oxygen, this often stated, but misused statistic actually refers to oxygen turnover.",
+                        "retriever_score": 0.7195352911949158,
+                        "similarity_score": 0.6924725770950317,
+                        "nli_scores": {
+                            "contradiction": 0.37617331743240356,
+                            "neutral": 0.9988083839416504,
+                            "entailment": 0.0047455462627112865
+                        }
+                    },
+                    {
+                        "title": "Deforestation",
+                        "text": "Species-area models are known to overpredict the number of species known to be threatened in areas where actual deforestation is ongoing, and greatly overpredict the number of threatened species that are widespread. In 2012, a study of the Brazilian Amazon predicts that despite a lack of extinctions thus far, up to 90 percent of predicted extinctions will finally occur in the next 40 years. ==== Oxygen-supply misconception ==== Rainforests are widely believed by lay people to provide a significant amount of the world's oxygen. However, scientific research has found that rainforests contribute little net oxygen to the Earth's atmosphere, so deforestation has only a minor effect on atmospheric oxygen levels.",
+                        "retriever_score": 0.6258060336112976,
+                        "similarity_score": 0.6510826945304871,
+                        "nli_scores": {
+                            "contradiction": 0.8331182599067688,
+                            "neutral": 0.9867669939994812,
+                            "entailment": 0.03163183853030205
+                        }
+                    },
+                    {
+                        "title": "Amazon basin",
+                        "text": "50% to 80% of the water remains locked within the basin due to the complex role vegetation, rivers and the atmosphere play with each other. Without trees the Amazon Basin's ability to hold onto the water will disappear and will lead to Desertification. \"Amazon biodiversity also plays a critical role as part of global systems, influencing the global carbon cycle and thus climate change, as well as hemispheric hydrological systems, serving as an important anchor for South American climate and rainfall. It also produces 20% oxygen of the Earth.\"",
+                        "retriever_score": 0.6221369504928589,
+                        "similarity_score": 0.6111212968826294,
+                        "nli_scores": {
+                            "contradiction": 0.011561489664018154,
+                            "neutral": 0.9984777569770813,
+                            "entailment": 0.005802744533866644
+                        }
+                    },
+                    {
+                        "title": "Amazon rainforest",
+                        "text": "The total number of tree species in the region is estimated at 16,000. The green leaf area of plants and trees in the rainforest varies by about 25% as a result of seasonal changes. Leaves expand during the dry season when sunlight is at a maximum, then undergo abscission in the cloudy wet season. These changes provide a balance of carbon between photosynthesis and respiration.",
+                        "retriever_score": 0.6163125038146973,
+                        "similarity_score": 0.4722541570663452,
+                        "nli_scores": {
+                            "contradiction": 0.0687071681022644,
+                            "neutral": 0.9994045495986938,
+                            "entailment": 0.04421886056661606
+                        }
+                    },
+                    {
+                        "title": "Amazon rainforest",
+                        "text": "The Amazon rainforest, also called the Amazon jungle or Amazonia, is a moist broadleaf tropical rainforest in the Amazon biome that covers most of the Amazon basin of South America. This basin encompasses 7 million km2 (2.7 million sq mi), of which 6 million km2 (2.3 million sq mi) are covered by the rainforest. This region includes territory belonging to nine nations and 3,344 indigenous territories. The majority of the forest, 60%, is in Brazil, followed by Peru with 13%, Colombia with 10%, and with minor amounts in Bolivia, Ecuador, French Guiana, Guyana, Suriname, and Venezuela.",
+                        "retriever_score": 0.6150634288787842,
+                        "similarity_score": 0.6191928386688232,
+                        "nli_scores": {
+                            "contradiction": 0.0016066841781139374,
+                            "neutral": 0.999340832233429,
+                            "entailment": 0.04152259975671768
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.27178735323250297,
+                    "best_entailment": 0.04152259975671768,
+                    "best_contradiction": 0.0016066841781139374,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Amazon rainforest",
+                        "text": "The Amazon rainforest, also called the Amazon jungle or Amazonia, is a moist broadleaf tropical rainforest in the Amazon biome that covers most of the Amazon basin of South America. This basin encompasses 7 million km2 (2.7 million sq mi), of which 6 million km2 (2.3 million sq mi) are covered by the rainforest. This region includes territory belonging to nine nations and 3,344 indigenous territories. The majority of the forest, 60%, is in Brazil, followed by Peru with 13%, Colombia with 10%, and with minor amounts in Bolivia, Ecuador, French Guiana, Guyana, Suriname, and Venezuela.",
+                        "retriever_score": 0.6150634288787842,
+                        "similarity_score": 0.6191928386688232,
+                        "nli_scores": {
+                            "contradiction": 0.0016066841781139374,
+                            "neutral": 0.999340832233429,
+                            "entailment": 0.04152259975671768
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "claim": "Lightning never strikes the same place twice.",
+            "true_label": "REFUTED",
+            "predicted_label": "SUPPORTED",
+            "details": {
+                "claim": "Lightning never strikes the same place twice.",
+                "evidence": [
+                    {
+                        "title": "Thunderstorm",
+                        "text": "Remain in the vehicle and avoid touching metal. The NWS stopped recommending the \"lightning crouch\" in 2008 as it does not provide a significant level of protection and will not significantly lower the risk of being killed or injured from a nearby lightning strike. == Frequent occurrences == Thunderstorms occur throughout the world, even in the polar regions, with the greatest frequency in tropical rainforest areas, where they may occur nearly daily. At any given time, approximately 2,000 thunderstorms are occurring on Earth.",
+                        "retriever_score": 0.48298555612564087,
+                        "similarity_score": 0.4910236895084381,
+                        "nli_scores": {
+                            "contradiction": 0.11153452098369598,
+                            "neutral": 0.9936065673828125,
+                            "entailment": 0.0062040286138653755
+                        }
+                    },
+                    {
+                        "title": "Lightning rod",
+                        "text": "Lightning is most likely to strike where the sphere touches the ground. Points that the sphere cannot roll across and touch are safest from lightning. Lightning protectors should be placed where they will prevent the sphere from touching a structure. A weak point in most lightning diversion systems is in transporting the captured discharge from the lightning rod to the ground, though.",
+                        "retriever_score": 0.4828122556209564,
+                        "similarity_score": 0.5015634298324585,
+                        "nli_scores": {
+                            "contradiction": 0.018972761929035187,
+                            "neutral": 0.9994733929634094,
+                            "entailment": 0.05378517881035805
+                        }
+                    },
+                    {
+                        "title": "Lightning rod",
+                        "text": "Locations that are considered safe from lightning can be determined by imagining a leader's potential paths as a sphere that travels from the cloud to the ground. For lightning protection, it suffices to consider all possible spheres as they touch potential strike points. To determine strike points, consider a sphere rolling over the terrain. At each point, a potential leader position is simulated.",
+                        "retriever_score": 0.474456787109375,
+                        "similarity_score": 0.5047082901000977,
+                        "nli_scores": {
+                            "contradiction": 0.05835907161235809,
+                            "neutral": 0.9728000164031982,
+                            "entailment": 0.040888965129852295
+                        }
+                    },
+                    {
+                        "title": "Lightning rod",
+                        "text": "Lightning current will divide to follow every conductive path to ground, and even the divided current can cause damage. Secondary \"side-flashes\" can be enough to ignite a fire, blow apart brick, stone, or concrete, or injure occupants within a structure or building. However, the benefits of basic lightning protection systems have been evident for well over a century. Laboratory-scale measurements of the effects of lightning do not scale to applications involving natural lightning.",
+                        "retriever_score": 0.46565061807632446,
+                        "similarity_score": 0.4939703345298767,
+                        "nli_scores": {
+                            "contradiction": 0.02616630308330059,
+                            "neutral": 0.9992436170578003,
+                            "entailment": 0.012413358315825462
+                        }
+                    },
+                    {
+                        "title": "Ontario",
+                        "text": "Severe thunderstorms peak in summer. Windsor, in Southwestern Ontario, has the most lightning strikes per year in Canada, averaging 33 days of thunderstorm activity per year. In a typical year, Ontario averages 11 confirmed tornado touchdowns. Ontario had a record 29 tornadoes in both 2006 and 2009.",
+                        "retriever_score": 0.45847833156585693,
+                        "similarity_score": 0.4597434997558594,
+                        "nli_scores": {
+                            "contradiction": 0.08427044004201889,
+                            "neutral": 0.9992915391921997,
+                            "entailment": 0.00038462571683339775
+                        }
+                    }
+                ],
+                "final_result": {
+                    "final_score": 0.22341009825468064,
+                    "best_entailment": 0.05378517881035805,
+                    "best_contradiction": 0.018972761929035187,
+                    "label": "NOT_ENOUGH_INFO",
+                    "hallucinated": false,
+                    "best_evidence": {
+                        "title": "Lightning rod",
+                        "text": "Lightning is most likely to strike where the sphere touches the ground. Points that the sphere cannot roll across and touch are safest from lightning. Lightning protectors should be placed where they will prevent the sphere from touching a structure. A weak point in most lightning diversion systems is in transporting the captured discharge from the lightning rod to the ground, though.",
+                        "retriever_score": 0.4828122556209564,
+                        "similarity_score": 0.5015634298324585,
+                        "nli_scores": {
+                            "contradiction": 0.018972761929035187,
+                            "neutral": 0.9994733929634094,
+                            "entailment": 0.05378517881035805
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

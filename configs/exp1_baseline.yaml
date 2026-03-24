@@ -8,11 +8,11 @@ data:
 # MODEL SETTINGS
 models:
   embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
-  nli_model: "cross-encoder/nli-deberta-v3-large"
+  nli_model: "facebook/bart-large-mnli"
 
 # RETRIEVAL SETTINGS
 retrieval:
-  top_k: 3
+  top_k: 5
   use_gpu: false
 
   index_path: "indexes/faiss.index"

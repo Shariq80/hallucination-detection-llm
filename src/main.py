@@ -3,7 +3,7 @@ from src.pipeline.pipeline import HallucinationPipeline
 def main():
     pipeline = HallucinationPipeline("configs/default.yaml")
 
-    claim = "The Eiffel Tower is in Paris."
+    claim = "Humans live on Mars."
 
     result = pipeline.verify(claim)
 

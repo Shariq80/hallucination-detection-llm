@@ -1,84 +1,72 @@
-import torch 
-import torch.nn.functional as F
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-from typing import Dict
+import torch
+import torch.nn.functional as F
+import re
+
 
 class NLIVerifier:
-    def __init__(self, config):
-        model_name = config.get("models", "nli_model")
-        device_setting = config.get("nli", "device")
 
-        if device_setting == "auto":
-            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        else:
-            self.device = torch.device(device_setting)
-        
+    def __init__(self, config):
+
+        model_name = config.get("models", "nli_model")
+
+        print(f"Loading NLI model: {model_name}")
+
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
+
+        self.device = self._get_device(config)
         self.model.to(self.device)
         self.model.eval()
-        
-        # MNLI label mapping
-        self.label_mapping = {
-            0: "contradiction",
-            1: "neutral",
-            2: "entailment"
-        }
 
-    def verify(self, premise: str, hypothesis: str) -> Dict[str, float]:
-        """
-        Perform NLI verification between premise and hypothesis.
-        """
-        # Tokenize premise and hypothesis as sentence pair
-        inputs = self.tokenizer(
-            premise,
-            hypothesis,
-            return_tensors="pt",
-            truncation=True,
-            padding=True
-        )
+    def _get_device(self, config):
+        device = config.get("nli", "device")
 
-        # Move tensors to device
-        inputs = {key: value.to(self.device) for key, value in inputs.items()}
+        if device == "auto":
+            return torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-        # forward pass (no gradient computation for inference)
-        with torch.no_grad():
-            outputs = self.model(**inputs)
-            logits = outputs.logits
+        return torch.device(device)
 
-        # Convert logits to probabilities
-        probabilities = F.softmax(logits, dim=-1)[0]
-
-        contradiction_prob = probabilities[0].item()
-        neutral_prob = probabilities[1].item()
-        entailment_prob = probabilities[2].item()
-
-        # Determine predicted label
-        predicted_index = torch.argmax(probabilities).item()
-        predicted_label = self.label_mapping[predicted_index]
-
-        return {
-            "entailment_probability": round(entailment_prob, 4),
-            "contradiction_probability": round(contradiction_prob, 4),
-            "neutral_probability": round(neutral_prob, 4),
-            "predicted_label": predicted_label
-        }
+    def _split_sentences(self, text):
+        # ✅ Simple and effective sentence splitter
+        sentences = re.split(r'(?<=[.!?]) +', text)
+        return [s.strip() for s in sentences if s.strip()]
 
     def predict(self, claim, evidence):
-        inputs = self.tokenizer(
-            claim,
-            evidence,
-            return_tensors = "pt",
-            truncation = True
-        )
 
-        with torch.no_grad():
-            outputs = self.model(**inputs)
-        
-        probs = torch.softmax(outputs.logits, dim=1)
-        labels = ["contradiction", "neutral", "entailment"]
+        sentences = self._split_sentences(evidence)
 
-        return {
-            label: probs[0][i].item()
-            for i, label in enumerate(labels)
+        best_scores = {
+            "contradiction": 0.0,
+            "neutral": 0.0,
+            "entailment": 0.0
         }
+
+        for sentence in sentences:
+
+            inputs = self.tokenizer(
+                claim,
+                sentence,
+                return_tensors="pt",
+                truncation=True,
+                padding=True,
+                max_length=256
+            )
+
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+
+            with torch.no_grad():
+                outputs = self.model(**inputs)
+                probs = F.softmax(outputs.logits, dim=1)[0]
+
+            # DeBERTa mapping
+            contradiction = probs[0].item()
+            neutral = probs[1].item()
+            entailment = probs[2].item()
+
+            # ✅ Take best across sentences
+            best_scores["contradiction"] = max(best_scores["contradiction"], contradiction)
+            best_scores["neutral"] = max(best_scores["neutral"], neutral)
+            best_scores["entailment"] = max(best_scores["entailment"], entailment)
+
+        return best_scores

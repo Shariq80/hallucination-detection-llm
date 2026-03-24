@@ -35,27 +35,34 @@ class HallucinationPipeline:
 
             print(f"\nEvidence {i+1}")
             print("Title:", evidence["title"])
-            print("Text:", text[:200], "...")   # shorten display
+            print("Text:", text[:200], "...")
             print("Retriever Score:", evidence["score"])
 
             print("\nRunning Similarity...")
             sim_score = self.similarity.score(claim, text)
-
             print("Similarity Score:", sim_score)
 
             print("Running NLI...")
             nli_scores = self.nli.predict(claim, text)
-
             print("NLI Scores:", nli_scores)
 
             evidence_results.append({
+                "title": evidence["title"],
                 "text": text,
-                "similarity": sim_score,
-                "nli": nli_scores
+                "retriever_score": evidence["score"],
+                "similarity_score": sim_score,
+                "nli_scores": nli_scores
             })
 
         print("\n--- Aggregating Evidence ---")
 
         result = self.aggregator.aggregate(evidence_results)
 
-        return result
+        print("\nFinal Decision:", result)
+
+        # RETURN FULL STRUCTURED OUTPUT
+        return {
+            "claim": claim,
+            "evidence": evidence_results,
+            "final_result": result
+        }
