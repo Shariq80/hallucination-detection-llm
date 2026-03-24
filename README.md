@@ -35,9 +35,9 @@ bash setup_and_run.sh
    ```
 5. Run the application:
    ```bash
-   python src/main.py
+   python -m src.main.py
    ```
-6. Setup and run
+6. RUn the evaluation scripts
    ```bash
-   ./setup_and_run.sh
+   python -m src.evaluation.evaluate
    ```
