@@ -60,14 +60,18 @@ def fetch_wiki_pages(titles, delay=0.2, limit=None):
     return pages
 
 
-def save_pages(pages, path="data/processed/wiki_pages.json"):
+def save_pages(pages, suffix=None):
+    Path("data/processed").mkdir(parents=True, exist_ok=True)
 
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    if suffix:
+        file_path = f"data/processed/wiki_pages_{suffix}.json"
+    else:
+        file_path = "data/processed/wiki_pages.json"
 
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(pages, f)
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(pages, f, ensure_ascii=False, indent=2)
 
-    print(f"Saved pages to {path}")
+    print(f"Saved pages to {file_path}")
 
 
 def load_pages(path="data/processed/wiki_pages.json"):

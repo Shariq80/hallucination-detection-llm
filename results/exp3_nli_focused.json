@@ -1,16 +1,16 @@
 {
     "config": "configs/exp3_nli_focused.yaml",
     "metrics": {
-        "accuracy": 0.6,
-        "precision": 1.0,
-        "recall": 0.2,
-        "f1": 0.33333333333333337
+        "accuracy": 0.45,
+        "precision": 0.46153846153846156,
+        "recall": 0.6,
+        "f1": 0.5217391304347826
     },
     "results": [
         {
             "claim": "The Eiffel Tower is in Paris.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The Eiffel Tower is in Paris.",
                 "evidence": [
@@ -74,8 +74,8 @@
                     "final_score": 0.11482259524054826,
                     "best_entailment": 0.0005283011123538017,
                     "best_contradiction": 0.0020938939414918423,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Paris",
                         "text": "Paris's top cultural attractions in 2022 were the Louvre Museum (7.7 million visitors), the Eiffel Tower (5.8 million visitors), the Mus\u00e9e d'Orsay (3.27 million visitors) and the Centre Pompidou (3 million visitors). In 2019, Greater Paris had 2,056 hotels, including 94 five-star hotels, with a total of 121,646 rooms. In 2019, in addition to the hotels, Greater Paris had 60,000 homes registered with Airbnb. Under French law, renters of these units must pay the Paris tourism tax.",
@@ -93,7 +93,7 @@
         {
             "claim": "Barack Obama was the 44th president of the United States.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "Barack Obama was the 44th president of the United States.",
                 "evidence": [
@@ -157,8 +157,8 @@
                     "final_score": 0.10883516147732734,
                     "best_entailment": 0.0023012093733996153,
                     "best_contradiction": 0.016000187024474144,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Presidency of Barack Obama",
                         "text": "As Obama left office, historians expressed various opinions about his effectiveness as president, with many noting that subsequent events would determine his ultimate legacy. There was universal agreement that Obama would long be remembered as the first African-American president. Many noted that Obama presided over an economic recovery and passed major domestic legislation, but failed to bridge a partisan divide and left office with his party in a weakened state. == See also == == Notes == == References == == Further reading == == External links == Obama White House archives The Obama White House's channel on YouTube \"Obama's People\" (photography: Nadav Kander) \"President Barack Obama's Inaugural Address\".",
@@ -176,7 +176,7 @@
         {
             "claim": "Water boils at 100 degrees Celsius at sea level.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "Water boils at 100 degrees Celsius at sea level.",
                 "evidence": [
@@ -240,8 +240,8 @@
                     "final_score": 0.7841408550739288,
                     "best_entailment": 0.9912064671516418,
                     "best_contradiction": 0.2655629515647888,
-                    "label": "SUPPORTED",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Water",
                         "text": "Water can remain in a liquid state at high temperatures in the deep ocean or underground. For example, temperatures exceed 205 \u00b0C (401 \u00b0F) in Old Faithful, a geyser in Yellowstone National Park. In hydrothermal vents, the temperature can exceed 400 \u00b0C (752 \u00b0F). At sea level, the boiling point of water is 100 \u00b0C (212 \u00b0F).",
@@ -498,7 +498,7 @@
         {
             "claim": "The human heart pumps blood.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The human heart pumps blood.",
                 "evidence": [
@@ -562,8 +562,8 @@
                     "final_score": 0.8262982043554076,
                     "best_entailment": 0.8503981232643127,
                     "best_contradiction": 0.0018663102528080344,
-                    "label": "SUPPORTED",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Heart",
                         "text": "The heart is a muscular organ found in humans and other animals. This organ pumps blood through the blood vessels. The heart and blood vessels together make up the circulatory system. The pumped blood carries oxygen and nutrients to the tissue, while carrying metabolic waste such as carbon dioxide to the lungs.",
@@ -581,7 +581,7 @@
         {
             "claim": "The Eiffel Tower is in Berlin.",
             "true_label": "REFUTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The Eiffel Tower is in Berlin.",
                 "evidence": [
@@ -645,8 +645,8 @@
                     "final_score": 0.10664155501872302,
                     "best_entailment": 0.004398024175316095,
                     "best_contradiction": 0.017333516851067543,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Berlin",
                         "text": "Built in 1969, it is visible throughout most of the central districts of Berlin. The city can be viewed from its 204-meter-high (669 ft) observation floor. Starting here, the Karl-Marx-Allee heads east, an avenue lined by monumental residential buildings, designed in the Socialist Classicism style. Adjacent to this area is the Rotes Rathaus (City Hall), with its distinctive red-brick architecture.",
@@ -664,7 +664,7 @@
         {
             "claim": "Barack Obama was born in Canada.",
             "true_label": "REFUTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "Barack Obama was born in Canada.",
                 "evidence": [
@@ -728,8 +728,8 @@
                     "final_score": -0.04192057494074106,
                     "best_entailment": 0.0008201755117624998,
                     "best_contradiction": 0.3245179355144501,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Presidency of Barack Obama",
                         "text": "As president, Obama faced numerous taunts and racial innuendos, though most overt racist comments were limited to a small fringe. Donald Trump theorized that Obama had been born in Kenya; an April 2011 CNN poll taken shortly before Obama released his long-form birth certificate found that 40% of Republicans believed that Obama had been born in Kenya. Many of these \"birthers\" argued that because Obama was (allegedly) not a citizen, he was not eligible to serve as president under the natural-born-citizen requirements of the Constitution. Despite Obama's release of his long-form birth certificate, which affirmed that Obama was born in Hawaii, a 2015 CNN poll found that 20% of Americans believed that Obama was born outside of the country.",
@@ -996,7 +996,7 @@
         {
             "claim": "The capital of France is Rome.",
             "true_label": "REFUTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The capital of France is Rome.",
                 "evidence": [
@@ -1060,8 +1060,8 @@
                     "final_score": 0.09192555919289591,
                     "best_entailment": 0.02477862872183323,
                     "best_contradiction": 0.06713635474443436,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Capital city",
                         "text": "'Rome head of the world') was already used by the poet Ovid in the 1st century BC. It originates out of a classical European understanding of the known world: Europe, North Africa, and Southwest Asia. The phrase is related to the enduring power of the city first as the capital of the Republic and the Empire, and later as the centre of the Catholic Church. In several English-speaking states, the terms county town and county seat are also used in lower administrative divisions.",
@@ -1152,7 +1152,7 @@
         {
             "claim": "The Eiffel Tower is one of the most visited monuments in the world.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The Eiffel Tower is one of the most visited monuments in the world.",
                 "evidence": [
@@ -1216,8 +1216,8 @@
                     "final_score": 0.10037037548609078,
                     "best_entailment": 0.0005164923495613039,
                     "best_contradiction": 0.0022363392636179924,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Paris",
                         "text": "Paris's top cultural attractions in 2022 were the Louvre Museum (7.7 million visitors), the Eiffel Tower (5.8 million visitors), the Mus\u00e9e d'Orsay (3.27 million visitors) and the Centre Pompidou (3 million visitors). In 2019, Greater Paris had 2,056 hotels, including 94 five-star hotels, with a total of 121,646 rooms. In 2019, in addition to the hotels, Greater Paris had 60,000 homes registered with Airbnb. Under French law, renters of these units must pay the Paris tourism tax.",
@@ -1318,7 +1318,7 @@
         {
             "claim": "Shakespeare wrote many famous plays.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "Shakespeare wrote many famous plays.",
                 "evidence": [
@@ -1382,8 +1382,8 @@
                     "final_score": 0.15997276054404214,
                     "best_entailment": 0.004293747246265411,
                     "best_contradiction": 0.0003293206973467022,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Shakespeare's plays",
                         "text": "Shakespeare's plays are a canon of approximately 39 dramatic works written by the English playwright and poet William Shakespeare. The exact number of plays as well as their classifications as tragedy, history, comedy, or otherwise is a matter of scholarly debate. Shakespeare's plays are widely regarded as among the greatest in the English language and are continually performed around the world. The plays have been translated into every major living language.",
@@ -1401,7 +1401,7 @@
         {
             "claim": "Mount Everest is the tallest mountain on Earth above sea level.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "Mount Everest is the tallest mountain on Earth above sea level.",
                 "evidence": [
@@ -1465,8 +1465,8 @@
                     "final_score": 0.6545492794364691,
                     "best_entailment": 0.664372444152832,
                     "best_contradiction": 0.015730757266283035,
-                    "label": "SUPPORTED",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Mount Everest",
                         "text": "It is thought that the plate tectonics of the Main Himalayan Thrust and related faults, which form the convergent boundary between the Eurasian Plate and Indian Plate, are adding to the height and moving the summit northeastwards. Two accounts suggest the rates of change are 4 mm (0.16 in) per year vertically and 3 to 6 mm (0.12 to 0.24 in) per year horizontally, but another account mentions more lateral movement (27 mm or 1.1 in), and even shrinkage has been suggested. === Comparisons === The summit of Everest is the point at which Earth's surface reaches the greatest distance above sea level. Several other mountains are sometimes claimed to be the \"tallest mountains on Earth\".",
@@ -1484,7 +1484,7 @@
         {
             "claim": "The Amazon rainforest produces most of the world's oxygen.",
             "true_label": "REFUTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The Amazon rainforest produces most of the world's oxygen.",
                 "evidence": [
@@ -1548,8 +1548,8 @@
                     "final_score": 0.15625330545008184,
                     "best_entailment": 0.04152259975671768,
                     "best_contradiction": 0.0016066841781139374,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Amazon rainforest",
                         "text": "The Amazon rainforest, also called the Amazon jungle or Amazonia, is a moist broadleaf tropical rainforest in the Amazon biome that covers most of the Amazon basin of South America. This basin encompasses 7 million km2 (2.7 million sq mi), of which 6 million km2 (2.3 million sq mi) are covered by the rainforest. This region includes territory belonging to nine nations and 3,344 indigenous territories. The majority of the forest, 60%, is in Brazil, followed by Peru with 13%, Colombia with 10%, and with minor amounts in Bolivia, Ecuador, French Guiana, Guyana, Suriname, and Venezuela.",

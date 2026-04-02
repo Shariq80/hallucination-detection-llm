@@ -1,70 +1,99 @@
+import numpy as np
+
 class ScoreAggregator:
-
     def __init__(self, config):
-
+        # Weights (still useful for ranking, not final decision)
         self.sim_weight = config.get("aggregation", "similarity_weight")
         self.entail_weight = config.get("aggregation", "entailment_weight")
 
-        self.entail_threshold = self._safe_get(config, "aggregation", "entailment_threshold", 0.5)
-        self.contra_threshold = self._safe_get(config, "aggregation", "contradiction_threshold", 0.5)
-        self.contra_penalty = self._safe_get(config, "aggregation", "contradiction_penalty", 0.5)
+        # Thresholds (used in final decision)
+        self.entail_threshold = config.get("aggregation", "entailment_threshold")
+        self.contra_threshold = config.get("aggregation", "contradiction_threshold")
+        self.sim_threshold = config.get("aggregation", "similarity_threshold")
 
-        # ✅ Optional similarity filtering
-        self.sim_threshold = self._safe_get(config, "aggregation", "similarity_threshold", 0.0)
+    def aggregate(self, evidence_results, prefilter_similarity=True):
 
-    def _safe_get(self, config, section, key, default):
-        try:
-            value = config.get(section, key)
-            return default if value is None else value
-        except:
-            return default
-
-    def aggregate(self, evidence_results):
-
-        best_score = float("-inf")
-        best_evidence = None
-
+        # -----------------------------
+        # 1. Assign similarity score
+        # -----------------------------
         for evidence in evidence_results:
-
-            sim = evidence.get("similarity_score", 0.0)
-
-            # ✅ Skip weak evidence
-            if sim < self.sim_threshold:
-                continue
-
-            nli = evidence.get("nli_scores", {})
-
-            entail = nli.get("entailment", 0.0)
-            contra = nli.get("contradiction", 0.0)
-
-            # ✅ Improved scoring
-            score = (
-                self.sim_weight * sim +
-                self.entail_weight * entail -
-                self.contra_penalty * contra
+            evidence["similarity_score"] = evidence.get(
+                "rerank_score",
+                evidence.get("hybrid_score",
+                             evidence.get("retriever_score",
+                                          evidence.get("score", 0.0)))
             )
 
-            if score > best_score:
-                best_score = score
-                best_evidence = evidence
+        # -----------------------------
+        # 2. Filter weak evidence
+        # -----------------------------
+        valid_evidence = []
+        for evidence in evidence_results:
+            sim = evidence.get("similarity_score", 0.0)
+            if not prefilter_similarity or sim >= self.sim_threshold:
+                valid_evidence.append(evidence)
 
-        # ✅ Handle no valid evidence
-        if not best_evidence:
+        if not valid_evidence:
             return {
                 "final_score": 0.0,
-                "best_entailment": 0.0,
-                "best_contradiction": 0.0,
+                "avg_entailment": 0.0,
+                "max_contradiction": 0.0,
                 "label": "NOT_ENOUGH_INFO",
                 "hallucinated": False,
                 "best_evidence": None
             }
 
-        # ✅ Use SAME evidence for decision
-        best_nli = best_evidence.get("nli_scores", {})
-        best_entail = best_nli.get("entailment", 0.0)
-        best_contra = best_nli.get("contradiction", 0.0)
+        # -----------------------------
+        # 3. Compute scores (for logging only)
+        # -----------------------------
+        entailments = []
+        contradictions = []
+        scores = []
 
-        # ✅ Decision logic
+        best_score = float("-inf")
+        best_evidence = None
+
+        for evidence in valid_evidence:
+            sim = evidence.get("similarity_score", 0.0)
+            nli = evidence.get("nli_scores", {})
+
+            entail = nli.get("entailment", 0.0)
+            contra = nli.get("contradiction", 0.0)
+
+            entailments.append(entail)
+            contradictions.append(contra)
+
+            # Score only for ranking best evidence
+            score = self.sim_weight * sim + self.entail_weight * entail - contra
+            scores.append(score)
+
+            if score > best_score:
+                best_score = score
+                best_evidence = evidence
+
+        # -----------------------------
+        # 4. Strong evidence filtering
+        # -----------------------------
+        strong_evidence = [
+            e for e in valid_evidence
+            if e["similarity_score"] > 0.5 and e["nli_scores"].get("neutral", 0.0) < 0.95
+        ]
+
+        # If strong evidence exists → use it
+        if strong_evidence:
+            evidence_pool = strong_evidence
+        else:
+            evidence_pool = valid_evidence
+
+        # -----------------------------
+        # 5. Extract best signals
+        # -----------------------------
+        best_entail = max(e["nli_scores"].get("entailment", 0.0) for e in evidence_pool)
+        best_contra = max(e["nli_scores"].get("contradiction", 0.0) for e in evidence_pool)
+
+        # -----------------------------
+        # 6. Final Decision (KEY FIX)
+        # -----------------------------
         if best_entail >= self.entail_threshold:
             label = "SUPPORTED"
         elif best_contra >= self.contra_threshold:
@@ -72,10 +101,13 @@ class ScoreAggregator:
         else:
             label = "NOT_ENOUGH_INFO"
 
+        # -----------------------------
+        # 7. Return structured output
+        # -----------------------------
         return {
-            "final_score": best_score,
-            "best_entailment": best_entail,
-            "best_contradiction": best_contra,
+            "final_score": float(np.mean(scores)),  # for debugging only
+            "avg_entailment": float(np.mean(entailments)),
+            "max_contradiction": float(np.max(contradictions)),
             "label": label,
             "hallucinated": label == "REFUTED",
             "best_evidence": best_evidence

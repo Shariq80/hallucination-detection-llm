@@ -1,16 +1,16 @@
 {
     "config": "configs/exp4_strict.yaml",
     "metrics": {
-        "accuracy": 0.65,
-        "precision": 1.0,
-        "recall": 0.3,
-        "f1": 0.4615384615384615
+        "accuracy": 0.45,
+        "precision": 0.46153846153846156,
+        "recall": 0.6,
+        "f1": 0.5217391304347826
     },
     "results": [
         {
             "claim": "The Eiffel Tower is in Paris.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The Eiffel Tower is in Paris.",
                 "evidence": [
@@ -71,11 +71,11 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.23016383633948864,
+                    "final_score": 0.4608463185373694,
                     "best_entailment": 0.0005283011123538017,
                     "best_contradiction": 0.0020938939414918423,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Paris",
                         "text": "Paris's top cultural attractions in 2022 were the Louvre Museum (7.7 million visitors), the Eiffel Tower (5.8 million visitors), the Mus\u00e9e d'Orsay (3.27 million visitors) and the Centre Pompidou (3 million visitors). In 2019, Greater Paris had 2,056 hotels, including 94 five-star hotels, with a total of 121,646 rooms. In 2019, in addition to the hotels, Greater Paris had 60,000 homes registered with Airbnb. Under French law, renters of these units must pay the Paris tourism tax.",
@@ -93,7 +93,7 @@
         {
             "claim": "Barack Obama was the 44th president of the United States.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "Barack Obama was the 44th president of the United States.",
                 "evidence": [
@@ -154,11 +154,11 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.22336920709349214,
+                    "final_score": 0.45243729832582175,
                     "best_entailment": 0.0023012093733996153,
                     "best_contradiction": 0.016000187024474144,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Presidency of Barack Obama",
                         "text": "As Obama left office, historians expressed various opinions about his effectiveness as president, with many noting that subsequent events would determine his ultimate legacy. There was universal agreement that Obama would long be remembered as the first African-American president. Many noted that Obama presided over an economic recovery and passed major domestic legislation, but failed to bridge a partisan divide and left office with his party in a weakened state. == See also == == Notes == == References == == Further reading == == External links == Obama White House archives The Obama White House's channel on YouTube \"Obama's People\" (photography: Nadav Kander) \"President Barack Obama's Inaugural Address\".",
@@ -176,7 +176,7 @@
         {
             "claim": "Water boils at 100 degrees Celsius at sea level.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "Water boils at 100 degrees Celsius at sea level.",
                 "evidence": [
@@ -237,11 +237,11 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.7098567187786102,
+                    "final_score": 0.561288446187973,
                     "best_entailment": 0.9912064671516418,
                     "best_contradiction": 0.2655629515647888,
-                    "label": "SUPPORTED",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Water",
                         "text": "Water can remain in a liquid state at high temperatures in the deep ocean or underground. For example, temperatures exceed 205 \u00b0C (401 \u00b0F) in Old Faithful, a geyser in Yellowstone National Park. In hydrothermal vents, the temperature can exceed 400 \u00b0C (752 \u00b0F). At sea level, the boiling point of water is 100 \u00b0C (212 \u00b0F).",
@@ -393,7 +393,7 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.22771919853985312,
+                    "final_score": 0.40429854877293114,
                     "best_entailment": 0.0641823559999466,
                     "best_contradiction": 0.026085015386343002,
                     "label": "NOT_ENOUGH_INFO",
@@ -476,20 +476,20 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.40682275295257564,
-                    "best_entailment": 0.8204053640365601,
-                    "best_contradiction": 0.6827688217163086,
-                    "label": "SUPPORTED",
+                    "final_score": 0.509962560608983,
+                    "best_entailment": 0.0028510596603155136,
+                    "best_contradiction": 0.06767045706510544,
+                    "label": "NOT_ENOUGH_INFO",
                     "hallucinated": false,
                     "best_evidence": {
-                        "title": "Shogun",
-                        "text": "31 (1): 29\u201349. doi:10.2307/2384184. JSTOR 2384184. \"Japan\".",
-                        "retriever_score": 0.6259888410568237,
-                        "similarity_score": 0.6399098634719849,
+                        "title": "Edo",
+                        "text": "The city was home to samurai officials, townspeople (ch\u014dnin), and artisans, and served as a centre of economic activity, urban cultural practices, and administrative organization during the Tokugawa era. Following the overthrow of the Tokugawa shogunate in 1868, the city formerly known as Edo was renamed T\u014dky\u014d (\"Eastern Capital\"), and the emperor\u2019s residence was moved there from Kyoto, establishing Tokyo as the capital of Japan. The development of Edo during the Tokugawa period (1603\u20111868) influenced the later growth and urban character of Tokyo after the Meiji Restoration. == History == === Before Tokugawa === Before the 10th century, there is no mention of Edo in historical records, but for a few settlements in the area.",
+                        "retriever_score": 0.6795001029968262,
+                        "similarity_score": 0.6790344715118408,
                         "nli_scores": {
-                            "contradiction": 0.6827688217163086,
-                            "neutral": 0.9521721601486206,
-                            "entailment": 0.8204053640365601
+                            "contradiction": 0.06767045706510544,
+                            "neutral": 0.9958778619766235,
+                            "entailment": 0.0028510596603155136
                         }
                     }
                 }
@@ -498,7 +498,7 @@
         {
             "claim": "The human heart pumps blood.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The human heart pumps blood.",
                 "evidence": [
@@ -559,11 +559,11 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.8031314405729062,
+                    "final_score": 0.7567979130079039,
                     "best_entailment": 0.8503981232643127,
                     "best_contradiction": 0.0018663102528080344,
-                    "label": "SUPPORTED",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Heart",
                         "text": "The heart is a muscular organ found in humans and other animals. This organ pumps blood through the blood vessels. The heart and blood vessels together make up the circulatory system. The pumped blood carries oxygen and nutrients to the tissue, while carrying metabolic waste such as carbon dioxide to the lungs.",
@@ -581,7 +581,7 @@
         {
             "claim": "The Eiffel Tower is in Berlin.",
             "true_label": "REFUTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The Eiffel Tower is in Berlin.",
                 "evidence": [
@@ -642,11 +642,11 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.21755184428766372,
+                    "final_score": 0.4393724228255451,
                     "best_entailment": 0.004398024175316095,
                     "best_contradiction": 0.017333516851067543,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Berlin",
                         "text": "Built in 1969, it is visible throughout most of the central districts of Berlin. The city can be viewed from its 204-meter-high (669 ft) observation floor. Starting here, the Karl-Marx-Allee heads east, an avenue lined by monumental residential buildings, designed in the Socialist Classicism style. Adjacent to this area is the Rotes Rathaus (City Hall), with its distinctive red-brick architecture.",
@@ -725,7 +725,7 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.07759764236398042,
+                    "final_score": 0.3166340769734234,
                     "best_entailment": 0.0008201755117624998,
                     "best_contradiction": 0.3245179355144501,
                     "label": "REFUTED",
@@ -808,7 +808,7 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": -0.14719391958788036,
+                    "final_score": 0.07415341967716815,
                     "best_entailment": 0.005821329075843096,
                     "best_contradiction": 0.748725175857544,
                     "label": "REFUTED",
@@ -891,7 +891,7 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.37007070183753965,
+                    "final_score": 0.5531841635704041,
                     "best_entailment": 0.21217601001262665,
                     "best_contradiction": 0.05043753981590271,
                     "label": "NOT_ENOUGH_INFO",
@@ -974,7 +974,7 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.2216994803864509,
+                    "final_score": 0.46175559996627275,
                     "best_entailment": 0.0021726235281676054,
                     "best_contradiction": 0.04105852544307709,
                     "label": "NOT_ENOUGH_INFO",
@@ -996,7 +996,7 @@
         {
             "claim": "The capital of France is Rome.",
             "true_label": "REFUTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The capital of France is Rome.",
                 "evidence": [
@@ -1057,11 +1057,11 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.19264066703617574,
+                    "final_score": 0.39407088272273544,
                     "best_entailment": 0.02477862872183323,
                     "best_contradiction": 0.06713635474443436,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Capital city",
                         "text": "'Rome head of the world') was already used by the poet Ovid in the 1st century BC. It originates out of a classical European understanding of the known world: Europe, North Africa, and Southwest Asia. The phrase is related to the enduring power of the city first as the capital of the Republic and the Empire, and later as the centre of the Catholic Church. In several English-speaking states, the terms county town and county seat are also used in lower administrative divisions.",
@@ -1152,7 +1152,7 @@
         {
             "claim": "The Eiffel Tower is one of the most visited monuments in the world.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The Eiffel Tower is one of the most visited monuments in the world.",
                 "evidence": [
@@ -1213,11 +1213,11 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.20134242825442925,
+                    "final_score": 0.4032865337911062,
                     "best_entailment": 0.0005164923495613039,
                     "best_contradiction": 0.0022363392636179924,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Paris",
                         "text": "Paris's top cultural attractions in 2022 were the Louvre Museum (7.7 million visitors), the Eiffel Tower (5.8 million visitors), the Mus\u00e9e d'Orsay (3.27 million visitors) and the Centre Pompidou (3 million visitors). In 2019, Greater Paris had 2,056 hotels, including 94 five-star hotels, with a total of 121,646 rooms. In 2019, in addition to the hotels, Greater Paris had 60,000 homes registered with Airbnb. Under French law, renters of these units must pay the Paris tourism tax.",
@@ -1296,7 +1296,7 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": -0.04652860452188179,
+                    "final_score": 0.17515032592928037,
                     "best_entailment": 0.0008717628079466522,
                     "best_contradiction": 0.5381585955619812,
                     "label": "REFUTED",
@@ -1318,7 +1318,7 @@
         {
             "claim": "Shakespeare wrote many famous plays.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "Shakespeare wrote many famous plays.",
                 "evidence": [
@@ -1379,11 +1379,11 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.3158164341904922,
+                    "final_score": 0.6275037814833924,
                     "best_entailment": 0.004293747246265411,
                     "best_contradiction": 0.0003293206973467022,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Shakespeare's plays",
                         "text": "Shakespeare's plays are a canon of approximately 39 dramatic works written by the English playwright and poet William Shakespeare. The exact number of plays as well as their classifications as tragedy, history, comedy, or otherwise is a matter of scholarly debate. Shakespeare's plays are widely regarded as among the greatest in the English language and are continually performed around the world. The plays have been translated into every major living language.",
@@ -1401,7 +1401,7 @@
         {
             "claim": "Mount Everest is the tallest mountain on Earth above sea level.",
             "true_label": "SUPPORTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "Mount Everest is the tallest mountain on Earth above sea level.",
                 "evidence": [
@@ -1462,20 +1462,20 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.6525914933532477,
-                    "best_entailment": 0.664372444152832,
-                    "best_contradiction": 0.015730757266283035,
-                    "label": "SUPPORTED",
-                    "hallucinated": false,
+                    "final_score": 0.7137578351423145,
+                    "best_entailment": 0.4095097780227661,
+                    "best_contradiction": 0.02127263881266117,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Mount Everest",
-                        "text": "It is thought that the plate tectonics of the Main Himalayan Thrust and related faults, which form the convergent boundary between the Eurasian Plate and Indian Plate, are adding to the height and moving the summit northeastwards. Two accounts suggest the rates of change are 4 mm (0.16 in) per year vertically and 3 to 6 mm (0.12 to 0.24 in) per year horizontally, but another account mentions more lateral movement (27 mm or 1.1 in), and even shrinkage has been suggested. === Comparisons === The summit of Everest is the point at which Earth's surface reaches the greatest distance above sea level. Several other mountains are sometimes claimed to be the \"tallest mountains on Earth\".",
-                        "retriever_score": 0.7037938833236694,
-                        "similarity_score": 0.6545835137367249,
+                        "text": "Mount Everest (known locally as Sagarm\u0101th\u0101 in Nepal and Qomolangma in Tibet) is Earth's highest mountain above sea level. It lies in the Mahalangur Himal sub-range of the Himalayas and marks part of the China\u2013Nepal border at its summit. Its height was most recently measured in 2020 by Chinese and Nepali authorities as 8,848.86 m (29,031 ft 8+1\u20442 in). Mount Everest attracts many climbers, including highly experienced mountaineers.",
+                        "retriever_score": 0.8047055006027222,
+                        "similarity_score": 0.8031152486801147,
                         "nli_scores": {
-                            "contradiction": 0.015730757266283035,
-                            "neutral": 0.9989691972732544,
-                            "entailment": 0.664372444152832
+                            "contradiction": 0.02127263881266117,
+                            "neutral": 0.9986114501953125,
+                            "entailment": 0.4095097780227661
                         }
                     }
                 }
@@ -1484,7 +1484,7 @@
         {
             "claim": "The Amazon rainforest produces most of the world's oxygen.",
             "true_label": "REFUTED",
-            "predicted_label": "SUPPORTED",
+            "predicted_label": "REFUTED",
             "details": {
                 "claim": "The Amazon rainforest produces most of the world's oxygen.",
                 "evidence": [
@@ -1545,11 +1545,11 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.27178735323250297,
+                    "final_score": 0.5028554487973452,
                     "best_entailment": 0.04152259975671768,
                     "best_contradiction": 0.0016066841781139374,
-                    "label": "NOT_ENOUGH_INFO",
-                    "hallucinated": false,
+                    "label": "REFUTED",
+                    "hallucinated": true,
                     "best_evidence": {
                         "title": "Amazon rainforest",
                         "text": "The Amazon rainforest, also called the Amazon jungle or Amazonia, is a moist broadleaf tropical rainforest in the Amazon biome that covers most of the Amazon basin of South America. This basin encompasses 7 million km2 (2.7 million sq mi), of which 6 million km2 (2.3 million sq mi) are covered by the rainforest. This region includes territory belonging to nine nations and 3,344 indigenous territories. The majority of the forest, 60%, is in Brazil, followed by Peru with 13%, Colombia with 10%, and with minor amounts in Bolivia, Ecuador, French Guiana, Guyana, Suriname, and Venezuela.",
@@ -1628,7 +1628,7 @@
                     }
                 ],
                 "final_result": {
-                    "final_score": 0.22341009825468064,
+                    "final_score": 0.4025213986635208,
                     "best_entailment": 0.05378517881035805,
                     "best_contradiction": 0.018972761929035187,
                     "label": "NOT_ENOUGH_INFO",

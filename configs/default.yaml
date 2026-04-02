@@ -8,11 +8,15 @@ data:
 # MODEL SETTINGS
 models:
   embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
-  nli_model: "cross-encoder/nli-deberta-v3-large"
+  nli_model: "facebook/bart-large-mnli"
+
+# 1. facebook/bart-large-mnli 
+# 2. roberta-large-mnli
+# 3. typeform/distilbert-base-uncased-mnli
 
 # RETRIEVAL SETTINGS
 retrieval:
-  top_k: 3
+  top_k: 10
   use_gpu: false
 
   index_path: "indexes/faiss.index"
@@ -24,7 +28,7 @@ retrieval:
 
 # SIMILARITY SETTINGS
 similarity:
-  threshold: 0.60
+  threshold: 0.50
   batch_size: 32
 
 # NLI SETTINGS
@@ -36,12 +40,11 @@ nli:
 aggregation:
    similarity_weight: 0.4
    entailment_weight: 0.6
-   contradiction_penalty: 0.5
+   contradiction_penalty: 0.4
 
+   similarity_threshold: 0.3
    entailment_threshold: 0.5
-   contradiction_threshold: 0.5
-
-   similarity_threshold: 0.5
+   contradiction_threshold: 0.4
 
 # EXPERIMENT SETTINGS
 experiment:

@@ -3,29 +3,33 @@ data:
   dataset_name: "FEVER"
   data_path: "data/prepare_fever.py"
   split: "dev"
-  wiki_fetch_limit: null # null download all pages
+  wiki_fetch_limit: 100 # null download all pages
 
 # MODEL SETTINGS
 models:
   embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
   nli_model: "facebook/bart-large-mnli"
 
+# 1. facebook/bart-large-mnli 
+# 2. roberta-large-mnli
+# 3. typeform/distilbert-base-uncased-mnli
+
 # RETRIEVAL SETTINGS
 retrieval:
-  top_k: 5
+  top_k: 6
   use_gpu: false
 
-  index_path: "indexes/faiss.index"
-  metadata_path: "indexes/metadata.pkl"
+  index_path: "indexes/faiss_2_sentences.index"
+  metadata_path: "indexes/metadata_2_sentences.pkl"
 
-  sentences_per_chunk: 4
+  sentences_per_chunk: 2
   min_chunk_length: 40
   embedding_batch_size: 64
 
 # SIMILARITY SETTINGS
 similarity:
-  threshold: 0.60
-  batch_size: 16
+  threshold: 0.50
+  batch_size: 32
 
 # NLI SETTINGS
 nli:
@@ -34,14 +38,13 @@ nli:
 
 # AGGREGATION SETTINGS
 aggregation:
-   similarity_weight: 0.8
-   entailment_weight: 0.2
-   contradiction_penalty: 0.5
+   similarity_weight: 0.4
+   entailment_weight: 0.6
+   contradiction_penalty: 0.4
 
-   entailment_threshold: 0.5
-   contradiction_threshold: 0.3
-
-   similarity_threshold: 0.5
+   similarity_threshold: 0.2
+   entailment_threshold: 0.6
+   contradiction_threshold: 0.4
 
 # EXPERIMENT SETTINGS
 experiment:
