@@ -16,7 +16,7 @@ models:
 
 # RETRIEVAL SETTINGS
 retrieval:
-  top_k: 10
+  top_k: 6
   use_gpu: false
 
   index_path: "indexes/faiss.index"

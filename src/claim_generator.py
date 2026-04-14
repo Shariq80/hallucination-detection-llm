@@ -1,90 +1,100 @@
 # src/claim_generator.py
 import os
-from google import genai
-from google.genai import types
+import requests
 from dotenv import load_dotenv
-from pathlib import Path
+import time
+import random
 
-# 1. Load .env from project root
-# Path(__file__).resolve().parents[1] reaches the root from src/
-env_path = Path(__file__).resolve().parents[1] / ".env"
-load_dotenv(dotenv_path=env_path)
+# Load environment variables
+load_dotenv()
 
-# 2. Initialize the Client
-api_key = os.environ.get("GOOGLE_API_KEY")
-if not api_key:
-    raise ValueError(f"GOOGLE_API_KEY not found in environment. Checked: {env_path}")
-
-client = genai.Client(api_key=api_key)
+OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 def generate_claims(prompt: str, n_claims: int = 5):
     """
-    Generate short claims for hallucination detection.
-    Using gemini-3.1-flash-lite-preview for maximum speed and lowest cost during testing.
+    Generate short claims using a simple, low-cost model.
     """
-    try:
-        # Optimized config for testing: 
-        # Lower max tokens for speed, temperature 0.8 to encourage slight hallucinations.
-        config = types.GenerateContentConfig(
-            max_output_tokens=250,
-            temperature=0.8
-        )
 
-        # Using the specific lightweight model available to your key
-        response = client.models.generate_content(
-            model='gemini-3.1-flash-lite-preview',
-            contents=(
-                f"Task: Generate exactly {n_claims} short, one-sentence claims about '{prompt}'. "
-                f"Make some claims factual and some slightly hallucinated (false). "
-                f"Format: Return only the claims, one per line. No numbering, bullets, or extra text."
-            ),
-            config=config
-        )
+    max_retries = 5
+    base_delay = 1
 
-        # Extract text content safely
-        if not response or not response.text:
-            return []
+    api_key = os.getenv("OPENROUTER_API_KEY")
+    if not api_key:
+        raise ValueError("OPENROUTER_API_KEY not found in environment.")
 
-        text_output = response.text
-        
-        # Clean up output: remove leading numbers, bullets, or dashes (e.g., "1. ", "- ", "* ")
-        claims = []
-        for line in text_output.split("\n"):
-            clean_line = line.strip().lstrip('1234567890. *-')
-            if clean_line:
-                claims.append(clean_line)
-        
-        return claims[:n_claims]
+    for attempt in range(max_retries):
+        try:
+            headers = {
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+                "HTTP-Referer": "http://localhost",
+                "X-Title": "claim-generator"
+            }
 
-    except Exception as e:
-        if "429" in str(e):
-            print("Quota limit reached. Please wait ~60 seconds before retrying.")
-        elif "404" in str(e):
-            print("Model ID 'gemini-3.1-flash-lite-preview' not found. Falling back to 'gemini-2.5-flash-lite'...")
-            return _generate_fallback(prompt, n_claims)
-        else:
-            print(f"Error generating claims: {e}")
-        return []
+            data = {
+                # ✅ FREE + RELIABLE MODEL
+                "model": "openai/gpt-3.5-turbo",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": (
+                            f"Generate exactly {n_claims} short one-sentence claims about '{prompt}'. "
+                            f"Some should be true, some slightly false. "
+                            f"Return only the claims, one per line. No numbering or extra text."
+                        )
+                    }
+                ],
+                "max_tokens": 200,
+                "temperature": 0.7
+            }
 
-def _generate_fallback(prompt: str, n_claims: int):
-    """Internal fallback to a stable lite model if the preview is unavailable."""
-    try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash-lite',
-            contents=f"Generate {n_claims} claims about {prompt}. One per line."
-        )
-        return [c.strip().lstrip('1234567890. *-') for c in response.text.split("\n") if c.strip()]
-    except Exception:
-        return []
+            response = requests.post(
+                OPENROUTER_API_URL,
+                headers=headers,
+                json=data,
+                timeout=30
+            )
+
+            if not response.ok:
+                print(f"\nAttempt {attempt + 1} failed")
+                print("Status Code:", response.status_code)
+                print("Response:", response.text)
+                response.raise_for_status()
+
+            result = response.json()
+
+            text_output = result["choices"][0]["message"]["content"]
+
+            claims = [
+                line.strip().lstrip('1234567890. *-')
+                for line in text_output.split("\n")
+                if line.strip()
+            ]
+
+            return claims[:n_claims]
+
+        except requests.exceptions.RequestException as e:
+            print(f"Error (attempt {attempt + 1}): {e}")
+
+            delay = base_delay * (2 ** attempt) + random.uniform(0, 1)
+            print(f"Retrying in {delay:.2f} seconds...\n")
+            time.sleep(delay)
+
+            if attempt == max_retries - 1:
+                print("Max retries reached.")
+
+    return []
+
 
 # Test block
-if __name__ == "__main__":
-    test_topic = "Happy"
-    print(f"Generating claims for: {test_topic}...")
-    results = generate_claims(test_topic, 3)
-    
-    if results:
-        for i, claim in enumerate(results, 1):
-            print(f"{i}. {claim}")
-    else:
-        print("No claims generated. Check API Key or Internet connection.")
+# if __name__ == "__main__":
+#     topic = "Happy"
+#     print(f"Generating claims for: {topic}...\n")
+
+#     results = generate_claims(topic, 3)
+
+#     if results:
+#         for i, claim in enumerate(results, 1):
+#             print(f"{i}. {claim}")
+#     else:
+#         print("No claims generated. Check API key, model availability, or quota.")
