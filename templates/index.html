@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detect hallucinations in LLM outputs using multi-model NLI verification against Wikipedia evidence.">
+  <title>Hallucination Detector — Multi-Model LLM Fact Checker</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+</head>
+<body>
+  <div class="bg-gradient"></div>
+
+  <div class="app-wrapper">
+    <div class="container">
+
+      <!-- ===== HEADER ===== -->
+      <header class="header">
+        <span class="header__icon">🔬</span>
+        <h1 class="header__title">Hallucination Detector</h1>
+        <p class="header__subtitle">Multi-model NLI verification pipeline — enter a claim and compare how different transformer models evaluate its factuality against Wikipedia evidence.</p>
+      </header>
+
+      <!-- ===== TABS ===== -->
+      <div class="tabs" id="mainTabs">
+        <button class="tab-btn active" data-tab="verify-tab">🔍 Verify Claim</button>
+        <button class="tab-btn" data-tab="experiments-tab">📊 Experiment Results</button>
+      </div>
+
+      <!-- ===== VERIFY TAB ===== -->
+      <div class="tab-content active" id="verify-tab">
+
+        <!-- GENERATE CLAIMS SECTION -->
+        <div class="input-section glass-panel">
+          <label class="input-section__label">1. Generate Claims from Topic</label>
+          <div class="input-group">
+            <input
+              type="text"
+              class="claim-input"
+              id="topicInput"
+              placeholder="e.g., Mars Exploration, Quantum Computing"
+              autocomplete="off"
+            >
+            <div class="evidence-select-wrapper">
+              <label class="evidence-select__label" for="numClaimsSelect">Count</label>
+              <select class="evidence-select" id="numClaimsSelect">
+                <option value="1">1</option>
+                <option value="3" selected>3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <div class="evidence-select-wrapper">
+              <label class="evidence-select__label" for="topKSelect">Evidence</label>
+              <select class="evidence-select" id="topKSelect">
+                <option value="3">3</option>
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <button class="verify-btn" id="generateBtn" onclick="generateClaims()">
+              <span class="btn-text">💡 Generate</span>
+              <span class="spinner"></span>
+            </button>
+          </div>
+          <div class="example-chips">
+            <span class="example-chips__label">Try:</span>
+            <span class="chip" onclick="fillTopic(this)">SpaceX Mars Mission</span>
+            <span class="chip" onclick="fillTopic(this)">Albert Einstein</span>
+            <span class="chip" onclick="fillTopic(this)">Artificial Intelligence</span>
+          </div>
+        </div>
+
+        <!-- GENERATED CLAIMS MASTER TABLE -->
+        <div class="claims-table-section hidden" id="claimsTableSection" style="margin-bottom: var(--space-2xl);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-lg);">
+            <h2 class="section-title" style="margin-bottom: 0;">
+              <span class="section-title__icon">📋</span>
+              2. Generated Claims
+            </h2>
+            <button class="verify-btn" id="verifyAllBtn" onclick="verifyAllClaims()">
+              <span class="btn-text">⚡ Fact-Check All</span>
+              <span class="spinner"></span>
+            </button>
+          </div>
+          <div class="results-table-wrapper">
+            <table class="results-table" id="masterClaimsTable">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">#</th>
+                  <th>Claim</th>
+                  <th style="width: 150px;">Status</th>
+                  <th style="width: 180px;">Consensus Verdict</th>
+                  <th style="width: 100px;">Details</th>
+                </tr>
+              </thead>
+              <tbody id="masterClaimsBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- CLAIM DETAILS WRAPPER -->
+        <div id="claimDetailsSection" class="hidden">
+          <div style="padding: 10px 15px; background: rgba(108,138,255,0.1); border-left: 4px solid var(--accent-blue); margin-bottom: var(--space-lg); border-radius: 4px;">
+            <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Selected Claim Analysis</span>
+            <div id="selectedClaimText" style="font-size: 1.1rem; font-weight: 600; margin-top: 5px;"></div>
+          </div>
+
+        <!-- Progress Tracker -->
+        <div class="progress-tracker hidden" id="progressTracker">
+          <div class="progress-step" id="step-retrieval">
+            <span class="status-dot"></span>
+            Retrieving evidence from Wikipedia index…
+          </div>
+          <div class="progress-step" id="step-model1">
+            <span class="status-dot"></span>
+            Running Model 1: facebook/bart-large-mnli
+          </div>
+          <div class="progress-step" id="step-model2">
+            <span class="status-dot"></span>
+            Running Model 2: roberta-large-mnli
+          </div>
+          <div class="progress-step" id="step-model3">
+            <span class="status-dot"></span>
+            Running Model 3: distilbert-base-uncased-mnli
+          </div>
+        </div>
+
+        <!-- Loading Skeletons -->
+        <div class="model-grid hidden" id="skeletonGrid">
+          <div class="skeleton skeleton-card"></div>
+          <div class="skeleton skeleton-card"></div>
+          <div class="skeleton skeleton-card"></div>
+        </div>
+
+        <!-- Consensus Banner -->
+        <div class="hidden" id="consensusBanner"></div>
+
+        <!-- Model Comparison Cards -->
+        <div class="hidden" id="resultsSection">
+          <h2 class="section-title">
+            <span class="section-title__icon">⚖️</span>
+            Multi-Model Comparison
+          </h2>
+          <div class="model-grid" id="modelGrid"></div>
+        </div>
+
+        <!-- Aggregation Table -->
+        <div class="evidence-section hidden" id="aggregationSection">
+          <h2 class="section-title">
+            <span class="section-title__icon">📊</span>
+            Aggregated Verification Data
+          </h2>
+          <div class="results-table-wrapper">
+            <table class="results-table" id="aggregationTable">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Final Score</th>
+                  <th>Avg Entailment</th>
+                  <th>Max Contradiction</th>
+                  <th>Similarity</th>
+                </tr>
+              </thead>
+              <tbody id="aggregationBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Evidence Section (Table) -->
+        <div class="evidence-section hidden" id="evidenceSection">
+          <h2 class="section-title">
+            <span class="section-title__icon">📄</span>
+            Retrieved Evidence per Model
+          </h2>
+          <div class="results-table-wrapper">
+            <table class="results-table" id="evidenceTable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Model</th>
+                  <th>Title</th>
+                  <th>Text Extract</th>
+                  <th>Retriever Sc.</th>
+                  <th>NLI Entailment</th>
+                </tr>
+              </thead>
+              <tbody id="evidenceBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Terminal Log Section -->
+        <div class="terminal-section hidden" id="terminalSection">
+          <h2 class="section-title">
+            <span class="section-title__icon">💻</span>
+            Terminal Execution Trace
+          </h2>
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">bash — python -m src.main</span>
+            </div>
+            <pre class="terminal-log" id="terminalLog"></pre>
+          </div>
+        <!-- END CLAIM DETAILS WRAPPER -->
+      </div>
+
+      <!-- ===== EXPERIMENTS TAB ===== -->
+      <div class="tab-content" id="experiments-tab">
+        <div class="experiments-section">
+          <h2 class="section-title">
+            <span class="section-title__icon">📊</span>
+            Experiment Configurations — Metrics Comparison
+          </h2>
+          <div class="experiment-grid" id="experimentGrid"></div>
+
+          <h2 class="section-title" style="margin-top: var(--space-xl);">
+            <span class="section-title__icon">📋</span>
+            Per-Claim Predictions
+          </h2>
+          <div id="experimentSelect" style="margin-bottom: var(--space-lg);">
+            <!-- Populated by JS -->
+          </div>
+          <div class="results-table-wrapper" id="resultsTableWrapper">
+            <table class="results-table" id="resultsTable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Claim</th>
+                  <th>True Label</th>
+                  <th>Predicted</th>
+                  <th>Match</th>
+                </tr>
+              </thead>
+              <tbody id="resultsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

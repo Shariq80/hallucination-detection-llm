@@ -45,7 +45,9 @@ def evaluate():
 
             result = pipeline.verify(item["claim"])
 
-            pred = "REFUTED" if result["final_result"]["hallucinated"] else "SUPPORTED"
+            # Pipeline returns {"original_claim": ..., "atomic_results": [{"final_result": {...}, ...}]}
+            atomic = result["atomic_results"][0]["final_result"]
+            pred = "REFUTED" if atomic["hallucinated"] else "SUPPORTED"
             true = item["label"]
 
             # Store FULL result

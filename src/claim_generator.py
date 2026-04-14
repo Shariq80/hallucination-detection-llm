@@ -78,13 +78,13 @@ def _generate_fallback(prompt: str, n_claims: int):
         return []
 
 # Test block
-# if __name__ == "__main__":
-#     test_topic = "The founding of Hyderabad"
-#     print(f"Generating claims for: {test_topic}...")
-#     results = generate_claims(test_topic, 3)
+if __name__ == "__main__":
+    test_topic = "Happy"
+    print(f"Generating claims for: {test_topic}...")
+    results = generate_claims(test_topic, 3)
     
-#     if results:
-#         for i, claim in enumerate(results, 1):
-#             print(f"{i}. {claim}")
-#     else:
-#         print("No claims generated. Check API Key or Internet connection.")
+    if results:
+        for i, claim in enumerate(results, 1):
+            print(f"{i}. {claim}")
+    else:
+        print("No claims generated. Check API Key or Internet connection.")

@@ -1,11 +1,11 @@
-# main.py
 import os
 import argparse
 
 from src.claim_generator import generate_claims
 from src.pipeline.pipeline import HallucinationPipeline
 
-# Set your Google AI API key
+
+#Set your Google AI API key
 os.environ["GOOGLE_API_KEY"] = "YOUR_GOOGLE_AI_STUDIO_API_KEY"
 
 
