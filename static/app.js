@@ -6,7 +6,6 @@ let generatedClaimsList = []; // Array of { claim, status, label, verifications 
 // ===== INIT =====
 document.addEventListener('DOMContentLoaded', () => {
   initTabs();
-  loadExperimentResults();
 
   document.getElementById('topicInput').addEventListener('keydown', (e) => {
     if (e.key === 'Enter') generateClaims();
@@ -105,7 +104,7 @@ function renderMasterClaimsTable() {
 
     tr.innerHTML = `
       <td style="color:var(--text-muted)">${idx + 1}</td>
-      <td style="font-weight:500;">${item.claim.substring(0, 60)}${item.claim.length > 60 ? '...' : ''}</td>
+      <td style="font-weight:500;">${item.claim}</td>
       <td>${statusHtml}</td>
       <td>${labelHtml}</td>
       <td><span style="color:var(--accent-blue);font-size:0.8rem">View Details ➔</span></td>
@@ -123,7 +122,7 @@ async function verifyAllClaims() {
   btn.disabled = true;
   document.getElementById('claimDetailsSection').classList.add('hidden');
 
-  const topK = parseInt(document.getElementById('topKSelect').value);
+  const topK = 6;
 
   for (let i = 0; i < generatedClaimsList.length; i++) {
     if (generatedClaimsList[i].status === 'complete') continue;
@@ -227,7 +226,6 @@ function hideResults() {
   document.getElementById('resultsSection').classList.add('hidden');
   document.getElementById('evidenceSection').classList.add('hidden');
   document.getElementById('consensusBanner').classList.add('hidden');
-  document.getElementById('terminalSection').classList.add('hidden');
 }
 
 // ===== RENDER RESULTS =====
@@ -236,7 +234,6 @@ function renderResults(data) {
   renderModelCards(data);
   renderEvidenceTable(data);
   renderAggregationTable(data);
-  renderTerminalLog(data);
 }
 
 // ===== CONSENSUS BANNER =====
@@ -388,92 +385,32 @@ function renderEvidenceTable(data) {
   const tbody = document.getElementById('evidenceBody');
   tbody.innerHTML = '';
 
-  data.model_results.forEach(model => {
-    const evidence = model.evidence || [];
-    
-    evidence.forEach((ev, i) => {
-      const tr = document.createElement('tr');
-      const shortTitle = ev.title.length > 25 ? ev.title.substring(0, 25) + '...' : ev.title;
-      const shortText = ev.text.length > 80 ? ev.text.substring(0, 80) + '...' : ev.text;
-      const ent = ev.nli_scores?.entailment || 0;
+  if (!data.model_results || data.model_results.length === 0) {
+    document.getElementById('evidenceSection').classList.add('hidden');
+    return;
+  }
 
-      const rawHoverStr = JSON.stringify({
-        title: ev.title,
-        text: ev.text,
-        retriever_score: ev.retriever_score,
-        similarity_score: ev.similarity_score,
-        nli_scores: ev.nli_scores
-      }, null, 2).replace(/"/g, "'");
+  // Use evidence from the first model result to avoid duplicates
+  const evidence = data.model_results[0].evidence || [];
+  
+  evidence.forEach((ev, i) => {
+    const tr = document.createElement('tr');
+    const shortTitle = ev.title.length > 25 ? ev.title.substring(0, 25) + '...' : ev.title;
 
-      tr.innerHTML = `
-        <td style="color:var(--text-muted)">${i + 1}</td>
-        <td>${formatModelName(model.model_name).split(' ')[1]}</td>
-        <td class="has-tooltip" data-tooltip="Title: ${ev.title}">${shortTitle}</td>
-        <td class="has-tooltip" data-tooltip="${rawHoverStr}">${shortText}</td>
-        <td style="color:var(--accent-cyan);font-family:monospace">${ev.retriever_score.toFixed(3)}</td>
-        <td style="color:var(--accent-green);font-family:monospace">${ent.toFixed(3)}</td>
-      `;
-      tbody.appendChild(tr);
-    });
+    const titleHoverStr = ev.title.replace(/"/g, '&quot;');
+
+    tr.innerHTML = `
+      <td style="color:var(--text-muted)">${i + 1}</td>
+      <td class="has-tooltip" data-tooltip="${titleHoverStr}">${shortTitle}</td>
+      <td>${ev.text}</td>
+    `;
+    tbody.appendChild(tr);
   });
 
   document.getElementById('evidenceSection').classList.remove('hidden');
 }
 
-// ===== TERMINAL TRACE =====
-function renderTerminalLog(data) {
-  const logEl = document.getElementById('terminalLog');
-  let output = '';
 
-  data.model_results.forEach(model => {
-    output += `========================================\n`;
-    output += `RUNNING WITH MODEL: ${model.model_name}\n`;
-    output += `========================================\n\n`;
-    
-    output += `==============================\n`;
-    output += `CLAIM: ${data.claim}\n`;
-    output += `==============================\n`;
-    output += `Atomic Claims: ['${data.claim}']\n\n`;
-    output += `--- Retrieving Evidence ---\n\n`;
-
-    if (model.evidence && model.evidence.length > 0) {
-      model.evidence.forEach((ev, i) => {
-        output += `Evidence ${i + 1}\n`;
-        output += `Title: ${ev.title}\n`;
-        const shortText = ev.text.length > 200 ? ev.text.substring(0, 200) + ' ...' : ev.text;
-        output += `Text: ${shortText}\n`;
-        output += `Retriever Score: ${ev.retriever_score}\n`;
-        output += `Similarity Score: ${ev.similarity_score}\n`;
-        
-        const c = ev.nli_scores.contradiction || 0;
-        const n = ev.nli_scores.neutral || 0;
-        const e = ev.nli_scores.entailment || 0;
-        
-        output += `NLI Scores: {'contradiction': ${c}, 'neutral': ${n}, 'entailment': ${e}}\n\n`;
-      });
-    }
-
-    output += `--- Aggregating Evidence ---\n\n`;
-
-    const raw = model.raw_final_result || {};
-    // Emulate Python dict string
-    let dictStr = JSON.stringify(raw)
-      .replace(/"([^"]+)":/g, "'$1': ")
-      .replace(/"/g, "'")
-      .replace(/: false/g, ": False")
-      .replace(/: true/g, ": True");
-    
-    output += `Final Decision: ${dictStr}\n\n`;
-
-    output += `--- RESULT ---\n`;
-    output += `Claim: ${data.claim}\n`;
-    output += `Prediction (${model.model_name}): ${model.label}\n`;
-    output += `---------------------------\n\n`;
-  });
-
-  logEl.textContent = output;
-  document.getElementById('terminalSection').classList.remove('hidden');
-}
 
 // ===== EXPERIMENT RESULTS =====
 async function loadExperimentResults() {
