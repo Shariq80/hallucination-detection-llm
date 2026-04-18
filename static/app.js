@@ -396,13 +396,15 @@ function renderEvidenceTable(data) {
   evidence.forEach((ev, i) => {
     const tr = document.createElement('tr');
     const shortTitle = ev.title.length > 25 ? ev.title.substring(0, 25) + '...' : ev.title;
-
     const titleHoverStr = ev.title.replace(/"/g, '&quot;');
+    
+    const retrieverScore = (ev.retriever_score || 0).toFixed(3);
 
     tr.innerHTML = `
-      <td style="color:var(--text-muted)">${i + 1}</td>
+      <td style="color:var(--text-muted); text-align:center;">${i + 1}</td>
       <td class="has-tooltip" data-tooltip="${titleHoverStr}">${shortTitle}</td>
       <td>${ev.text}</td>
+      <td style="text-align:center; font-family:'JetBrains Mono'; color:var(--accent-blue);">${retrieverScore}</td>
     `;
     tbody.appendChild(tr);
   });
