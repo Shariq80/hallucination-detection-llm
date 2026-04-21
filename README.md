@@ -126,10 +126,10 @@ The server will start at:
    - Retrieved evidence with Retriever Scores
    - Aggregated verification metrics
 
-![Generate Claims Interface](docs/screenshots/02-generate-claims.png)
+![Generate Claims Interface](docs/screenshots/01-landing-page.png)
 *Step 1: Enter a topic and generate atomic claims*
 
-![Claims Table](docs/screenshots/03-generated-claims-table.png)
+![Claims Table](docs/screenshots/02-generated-claims-table.png)
 *Step 2: Review generated claims before verification*
 
 ### Via Python API
@@ -329,11 +329,14 @@ python app.py
 # Results show multi-model comparison + evidence table
 ```
 
-![Multi-Model Comparison Results](docs/screenshots/04-multi-model-comparison.png)
+![Multi-Model Comparison Results](docs/screenshots/03-multi-model-comparison.png)
 *All 3 NLI models (BART, RoBERTa, DistilBERT) evaluated side-by-side with consensus indicator*
 
-![Aggregated Verification Data & Retrieved Evidence](docs/screenshots/06-retrieved-evidence.png)
+![Aggregated Verification Data & Retrieved Evidence](docs/screenshots/04-aggregated-verification-data-and-retrived-evidence.png)
 *Aggregated metrics table and Retrieved Evidence with Retriever Scores (the new column!)*
+
+![Retrieved Evidence](docs/screenshots/05-retrieved-evidence.png)
+*Detailed retrieved evidence list*
 
 ### Example 2: Run Batch Evaluation
 ```bash
